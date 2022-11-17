@@ -7,7 +7,7 @@ SPDX-License-Identifier: Apache-2.0
 
 This example demonstrates the use of VMware GemFire for session state caching and can be used with the [Session State Caching Guide](https://tanzu.vmware.com/developer/data/tanzu-gemfire/guides/session-state-cache-sbdg/).
 
-The application uses [Spring Boot for Apache Geode](https://docs.spring.io/autorepo/docs/spring-boot-data-geode-build/current/reference/html5/).
+The application uses [Spring Boot for VMware GemFire](https://docs.vmware.com/en/Spring-Boot-for-VMware-GemFire/index.html).
 
 
 ## When should I use a session state cache?

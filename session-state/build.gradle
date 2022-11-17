@@ -12,7 +12,7 @@ plugins {
 
 group = 'com.vmware.gemfire.session-state-example'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
+sourceCompatibility = '1.11'
 
 
 configurations {
@@ -64,8 +64,8 @@ test {
 
 node {
 
-    version = '14.15.4'
-    npmVersion = '6.14.10'
+    version = '18.12.1'
+    npmVersion = '8.19.2'
     download = true
 
     // Set the work directory for unpacking node
@@ -73,6 +73,7 @@ node {
 
     // Set the work directory for NPM
     npmWorkDir = file("build/node")
+
     // Set the work directory for Yarn
     yarnWorkDir = file("build/yarn")
 }
@@ -94,16 +95,7 @@ task copyFrontEnd(type: Copy) {
     into 'build/resources/main/static/'
 }
 
-task appYarnTest(type: YarnTask) {
-    description = "Builds production version of the frontend"
-    workingDir = file("frontend")
-    args = ["run", "test"]
-}
-
 
 appYarnBuild.dependsOn appYarnInstall
 copyFrontEnd.dependsOn appYarnBuild
 processResources.dependsOn copyFrontEnd
-
-appYarnTest.dependsOn appYarnInstall
-test.dependsOn appYarnTest
