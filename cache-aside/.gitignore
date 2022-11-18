@@ -1,7 +1,0 @@
-build/
-out/
-*.iml
-.idea/
-.DS_Store
-.gradle/
-gradlew.bat
