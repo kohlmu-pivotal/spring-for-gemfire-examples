@@ -1,0 +1,3 @@
+start locator
+start server
+deploy --jar=./build/libs/function-invocation.jar
