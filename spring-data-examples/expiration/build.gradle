@@ -1,5 +1,16 @@
 plugins {
     id 'java-library'
+    id 'application'
+}
+
+application {
+    mainClassName = "dev.gemfire.expiration.custom.ExpirationClient"
+}
+
+tasks.register('runEntity', JavaExec) {
+    dependsOn 'classes'
+    mainClass = 'dev.gemfire.expiration.entity.EntityDefinedExpirationClient'
+    classpath = sourceSets.main.runtimeClasspath
 }
 
 repositories {
