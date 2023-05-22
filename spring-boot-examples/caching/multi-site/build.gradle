@@ -1,0 +1,20 @@
+plugins {
+	id "java"
+	id "io.freefair.lombok" version "6.5.1"
+}
+
+description = "Spring Geode Sample for Multi-Site Caching."
+
+dependencies {
+
+	implementation project(":spring-gemfire-starter")
+
+	implementation "org.assertj:assertj-core"
+	implementation "org.projectlombok:lombok"
+	implementation "org.springframework.boot:spring-boot-starter-web"
+
+	testImplementation project(":spring-gemfire-starter-test")
+
+	testImplementation "org.springframework.boot:spring-boot-starter-test"
+
+}

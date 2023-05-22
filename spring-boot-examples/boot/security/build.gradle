@@ -1,0 +1,17 @@
+plugins {
+	id "java"
+	id "io.freefair.lombok" version "6.5.1"
+}
+
+description = "Spring Geode Sample demonstrating Apache Geode security configured with Spring."
+
+dependencies {
+
+	implementation project(":spring-gemfire-starter")
+	implementation project(":spring-gemfire-starter-test")
+
+	implementation "org.assertj:assertj-core"
+	implementation "org.projectlombok:lombok"
+	implementation "org.springframework.boot:spring-boot-starter-web"
+
+}

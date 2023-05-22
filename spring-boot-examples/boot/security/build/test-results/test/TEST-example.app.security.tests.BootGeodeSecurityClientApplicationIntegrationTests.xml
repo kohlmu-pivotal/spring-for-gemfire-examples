@@ -1,0 +1,1119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="example.app.security.tests.BootGeodeSecurityClientApplicationIntegrationTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-05-19T21:45:44" hostname="jpatrickP6GQC.vmware.com" time="0.552">
+  <properties/>
+  <testcase name="dataReadNotAllowed" classname="example.app.security.tests.BootGeodeSecurityClientApplicationIntegrationTests" time="0.519"/>
+  <testcase name="dataWriteAllowed" classname="example.app.security.tests.BootGeodeSecurityClientApplicationIntegrationTests" time="0.021"/>
+  <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.5)
+
+?[34mStarting BootGeodeSecurityClientApplicationIntegrationTests using Java 17.0.5 with PID 67502 (started by jpatrick in /Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-samples/boot/security)?[0;39m 
+?[34mNo active profile set, falling back to 1 default profile: "default"?[0;39m 
+2023-05-19 14:45:36,438  INFO fig.annotation.ClusterAwareConfiguration: 503 - Failed to connect to localhost[40404]
+2023-05-19 14:45:36,447  INFO fig.annotation.ClusterAwareConfiguration: 503 - Failed to connect to localhost[10334]
+2023-05-19 14:45:36,449  INFO fig.annotation.ClusterAwareConfiguration: 497 - Successfully connected to localhost[56415]
+2023-05-19 14:45:36,450  INFO fig.annotation.ClusterAwareConfiguration: 622 - Cluster was found; Auto-configuration made [1] successful connection(s)
+2023-05-19 14:45:36,450  INFO fig.annotation.ClusterAwareConfiguration: 614 - Spring Boot application is running in a client/server topology using a standalone Apache Geode-based cluster
+2023-05-19 14:45:37,168  INFO .core.io.support.PropertySourceProcessor:  93 - Properties location [classpath:${spring-session-properties-location:spring-session.properties}] not resolvable: class path resource [spring-session.properties] cannot be opened because it does not exist
+2023-05-19 14:45:37,266  WARN ocalVariableTableParameterNameDiscoverer: 123 - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: example.app.security.client.model.Customer
+2023-05-19 14:45:37,728  INFO y.config.RepositoryConfigurationDelegate: 138 - Bootstrapping Spring Data Gemfire repositories in DEFAULT mode.
+2023-05-19 14:45:37,739  INFO y.config.RepositoryConfigurationDelegate: 208 - Finished Spring Data repository scanning in 6 ms. Found 0 Gemfire repository interfaces.
+2023-05-19 14:45:38,473  INFO xt.annotation.ConfigurationClassEnhancer: 323 - @Bean method ApacheShiroSecurityConfiguration.shiroGemFireBeanFactoryPostProcessor is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2023-05-19 14:45:38,478  INFO xt.annotation.ConfigurationClassEnhancer: 323 - @Bean method PdxConfiguration.pdxDiskStoreAwareBeanFactoryPostProcessor is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2023-05-19 14:45:38,482  INFO xt.annotation.ConfigurationClassEnhancer: 323 - @Bean method RegionTemplateAutoConfiguration.regionTemplateBeanFactoryPostProcessor is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2023-05-19 14:45:38,680  INFO trationDelegate$BeanPostProcessorChecker: 409 - Bean 'org.springframework.data.gemfire.config.annotation.BeanFactoryLocatorConfiguration' of type [org.springframework.data.gemfire.config.annotation.BeanFactoryLocatorConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-05-19 14:45:38,699  INFO trationDelegate$BeanPostProcessorChecker: 409 - Bean 'org.springframework.data.gemfire.config.annotation.ContinuousQueryConfiguration' of type [org.springframework.data.gemfire.config.annotation.ContinuousQueryConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-05-19 14:45:38,734  INFO trationDelegate$BeanPostProcessorChecker: 409 - Bean 'org.springframework.geode.boot.autoconfigure.DataImportExportAutoConfiguration' of type [org.springframework.geode.boot.autoconfigure.DataImportExportAutoConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-05-19 14:45:38,882  INFO trationDelegate$BeanPostProcessorChecker: 409 - Bean 'org.springframework.boot.autoconfigure.session.SessionAutoConfiguration$ServletSessionConfiguration' of type [org.springframework.boot.autoconfigure.session.SessionAutoConfiguration$ServletSessionConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-05-19 14:45:39,003  INFO trationDelegate$BeanPostProcessorChecker: 409 - Bean 'server-org.springframework.boot.autoconfigure.web.ServerProperties' of type [org.springframework.boot.autoconfigure.web.ServerProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-05-19 14:45:39,039  INFO trationDelegate$BeanPostProcessorChecker: 409 - Bean 'org.springframework.boot.autoconfigure.session.SessionAutoConfiguration$ServletSessionConfiguration$RememberMeServicesConfiguration' of type [org.springframework.boot.autoconfigure.session.SessionAutoConfiguration$ServletSessionConfiguration$RememberMeServicesConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-05-19 14:45:39,042  INFO trationDelegate$BeanPostProcessorChecker: 409 - Bean 'rememberMeServicesCookieSerializerCustomizer' of type [org.springframework.boot.autoconfigure.session.SessionAutoConfiguration$ServletSessionConfiguration$RememberMeServicesConfiguration$$Lambda$929/0x00000008010e8000] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-05-19 14:45:39,051  INFO trationDelegate$BeanPostProcessorChecker: 409 - Bean 'cookieSerializer' of type [org.springframework.session.web.http.DefaultCookieSerializer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-05-19 14:45:39,070  INFO trationDelegate$BeanPostProcessorChecker: 409 - Bean 'org.springframework.session.data.gemfire.config.annotation.web.http.GemFireHttpSessionConfiguration' of type [org.springframework.session.data.gemfire.config.annotation.web.http.GemFireHttpSessionConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-05-19 14:45:39,909  INFO e.logging.internal.LoggingProviderLoader:  78 - Using org.apache.geode.logging.internal.SimpleLoggingProvider for service org.apache.geode.logging.internal.spi.LoggingProvider
+2023-05-19 14:45:39,992  INFO he.geode.logging.internal.LoggingSession: 112 - 
+---------------------------------------------------------------------------
+  
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with this
+  work for additional information regarding copyright ownership.
+   
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with the
+  License.  You may obtain a copy of the License at
+  
+  http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
+  License for the specific language governing permissions and limitations
+  under the License.
+  
+---------------------------------------------------------------------------
+----------------------------------------
+VMware GemFire
+----------------------------------------
+Build-Java-Vendor: BellSoft
+GemFire-Source-Date: 2023-04-07 14:35:30 -0700
+Build-Platform: Linux 5.10.162+ amd64
+Build-Java-Version: 1.8.0_362
+GemFire-Source-Revision: 2a5ca3b62305f905c90704e265ab05aed659d745
+Build-Id: root 1810
+Product-Name: VMware GemFire
+GemFire-Source-Repository: support/10.0
+GemFire-Version: 10.0.0
+
+Running on: Running on: /192.168.1.8, 10 cpu(s), x86_64 Mac OS X 13.4 
+---------------------------------------------------------------------------
+Communications version: 200
+Process ID: 67502
+User: jpatrick
+Current dir: /Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-samples/boot/security
+Home dir: /Users/jpatrick
+Command Line Parameters:
+  -Dorg.gradle.internal.worker.tmpdir=/Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-samples/boot/security/build/tmp/test/work
+  -Dorg.gradle.native=false
+  -Xmx512m
+  -Dfile.encoding=UTF-8
+  -Duser.country=US
+  -Duser.language=en
+  -Duser.variant
+  -ea
+Class Path:
+  /Users/jpatrick/.gradle/caches/7.6/workerMain/gradle-worker.jar
+  /Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-samples/boot/security/build/classes/java/test
+  /Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-samples/boot/security/build/classes/java/main
+  /Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-samples/boot/security/build/resources/main
+  /Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-starter-test/build/libs/spring-gemfire-starter-test-1.0.0-build.9999.jar
+  /Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-starter/build/libs/spring-gemfire-starter-1.0.0-build.9999.jar
+  /Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-autoconfigure/build/libs/spring-gemfire-autoconfigure-1.0.0-build.9999.jar
+  /Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire/build/libs/spring-gemfire-1.0.0-build.9999.jar
+  /Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-extensions/build/libs/spring-gemfire-extensions-1.0.0-build.9999.jar
+  /Users/jpatrick/.m2/repository/com/vmware/gemfire/spring-test-gemfire-10.0-3.0/1.0.0-build.9999/spring-test-gemfire-10.0-3.0-1.0.0-build.9999.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-test/3.0.5/cf9fd5d146ce335eaec708b5bde40445f94ee813/spring-boot-starter-test-3.0.5.jar
+  /Users/jpatrick/.m2/repository/org/assertj/assertj-core/3.23.1/assertj-core-3.23.1.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.26/8f8cf0372abf564913e9796623aac4c8ea44025a/lombok-1.18.26.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-web/3.0.5/c8f9a85fed134963b69cb2f2a0dcf151047b6cd1/spring-boot-starter-web-3.0.5.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter/5.9.2/26c586fbe0ebd81b48c9f11f0d998124248697ae/junit-jupiter-5.9.2.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-params/5.9.2/bc2765afb7b85b583c710dd259a11c6b8c39e912/junit-jupiter-params-5.9.2.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.junit.vintage/junit-vintage-engine/5.9.2/53421816bde124a564a64ba005dcc0c8e66a9722/junit-vintage-engine-5.9.2.jar
+  /Users/jpatrick/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar
+  /Users/jpatrick/.m2/repository/org/mockito/mockito-junit-jupiter/4.8.1/mockito-junit-jupiter-4.8.1.jar
+  /Users/jpatrick/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.9.2/junit-jupiter-engine-5.9.2.jar
+  /Users/jpatrick/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.9.2/junit-jupiter-api-5.9.2.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.mockito/mockito-core/4.8.1/d8eb9dec8747d08645347bb8c69088ac83197975/mockito-core-4.8.1.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework/spring-test/6.0.7/c0734c4b554ee485b80cdf193f9b9f5e201d29ae/spring-test-6.0.7.jar
+  /Users/jpatrick/.m2/repository/edu/umd/cs/mtc/multithreadedtc/1.01/multithreadedtc-1.01.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-json/3.0.5/d9b191badbcc63083770ba111f9290e45e512a54/spring-boot-starter-json-3.0.5.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter/3.0.5/5d13714accd45b2b1af0d5de1495b2ed9a49fe89/spring-boot-starter-3.0.5.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.vmware.gemfire/gemfire-wan/10.0.0/3a28694779b635fa663c0697cf94300654fe7112/gemfire-wan-10.0.0.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.vmware.gemfire/gemfire-gfsh/10.0.0/a0e6625eedf2aff0a98a3fe99cde3015a0b76e1f/gemfire-gfsh-10.0.0.jar
+  /Users/jpatrick/.m2/repository/org/springframework/shell/spring-shell/1.2.0.RELEASE/spring-shell-1.2.0.RELEASE.jar
+  /Users/jpatrick/.m2/repository/com/vmware/gemfire/spring-session-3.0-gemfire-10.0/1.0.0-build.9999/spring-session-3.0-gemfire-10.0-1.0.0-build.9999.jar
+  /Users/jpatrick/.m2/repository/com/vmware/gemfire/spring-data-3.0-gemfire-10.0/1.0.0-build.9999/spring-data-3.0-gemfire-10.0-1.0.0-build.9999.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context-support/6.0.7/8761cfa49054ecc46259e3a79f58fb6d1d73dd9c/spring-context-support-6.0.7.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-test-autoconfigure/3.0.5/8abab8961ac6a634a9bb1edea4182ab54297c947/spring-boot-test-autoconfigure-3.0.5.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/3.0.5/fa43d48c30a0105562ac8b0fb34e58deaa19737c/spring-boot-autoconfigure-3.0.5.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-test/3.0.5/2895ed0f90fc2a52fc27172f678ce05c1c256b37/spring-boot-test-3.0.5.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/3.0.5/a2aea9c55893accab2c9f3a987b5b58b277bfd42/spring-boot-3.0.5.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-web/6.0.2/df14b8a1d844cfb5f92e9a3ba3cd78ec29015570/spring-security-web-6.0.2.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-core/6.0.2/59c7e3fe6e9084ef51ec950c4bc45810d4dc8d5/spring-security-core-6.0.2.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/6.0.7/2fdde1a0d3706a85fe318a4f6ebffb4f4f7c4c6d/spring-webmvc-6.0.7.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/6.0.7/439a4cc348c87014fa7ae7d20c6498a10283a6cf/spring-context-6.0.7.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.vmware.gemfire/gemfire-cq/10.0.0/ac9c512d0408ebbaa6f0a553302b613bd9eba1b0/gemfire-cq-10.0.0.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.vmware.gemfire/gemfire-core/10.0.0/fbdc5e1878c95a79770a462ac17f93a6601860bb/gemfire-core-10.0.0.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.vmware.gemfire/gemfire-management/10.0.0/de5ab7e5dfb087629eb4444edf3dcf53e2a516bc/gemfire-management-10.0.0.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/6.0.7/43f8ac9c46c15d57fca00fc81ce1f2849f6cecb9/spring-web-6.0.7.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/6.0.7/d062bbaf50e4acb24edda5202a9732fee38e978b/spring-tx-6.0.7.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/3.0.4/3fb1dacb8a71a36b73a3f1ad22cc8cd3932420b3/spring-data-commons-3.0.4.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/6.0.7/d5b0bb68c88a4027d8e5d42f438088db86f29660/spring-aop-6.0.7.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/6.0.7/1abeec454cd1a2a40cff11ed5c388228eb021871/spring-beans-6.0.7.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/6.0.7/c9c93c88d35d02a0291ad7051065544fc0b674a3/spring-expression-6.0.7.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/6.0.7/33ad624acd55c846ec56fd65bd954b23fb2681b3/spring-core-6.0.7.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.session/spring-session-core/3.0.1/9a6a7bf476dfb3fed6df182e09899f67a414b051/spring-session-core-3.0.1.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jcl/6.0.7/6250e61ccf71b83204669e0501533278ef7888f8/spring-jcl-6.0.7.jar
+  /Users/jpatrick/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar
+  /Users/jpatrick/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-configuration-processor/3.0.5/a042112791600faeb5c7d65d71277a9c9dd9996c/spring-boot-configuration-processor-3.0.5.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure-processor/3.0.5/4993b1fdc46f39a05e6ac2cd85c1c9353f2d0ee7/spring-boot-autoconfigure-processor-3.0.5.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-logging/3.0.5/693455577f6f8c8a53f5992479358e955df74920/spring-boot-starter-logging-3.0.5.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-tomcat/3.0.5/5dd71e501f2be01a359ef7187e28a523379c23f2/spring-boot-starter-tomcat-3.0.5.jar
+  /Users/jpatrick/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar
+  /Users/jpatrick/.m2/repository/org/yaml/snakeyaml/1.33/snakeyaml-1.33.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.vmware.gemfire/gemfire-membership/10.0.0/af5f5c69f67554a2cb433be21c03cd6ead9660f7/gemfire-membership-10.0.0.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.vmware.gemfire/gemfire-tcp-messenger/10.0.0/f30cde15ac71ab03d1dcb9490491d80f7e0ceaa6/gemfire-tcp-messenger-10.0.0.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.vmware.gemfire/gemfire-tcp-server/10.0.0/5a702e3ea13806705a52bbd1e0b1498f1fa2f73a/gemfire-tcp-server-10.0.0.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.vmware.gemfire/gemfire-serialization/10.0.0/2a7081341d0bd95dd00b217b80d1da156b393770/gemfire-serialization-10.0.0.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.vmware.gemfire/gemfire-logging/10.0.0/4cf0af3ffd98fe7775cb5cb5fb23cf8fa3a68ffb/gemfire-logging-10.0.0.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.vmware.gemfire/gemfire-version/10.0.0/177eead10858b0a833a812387b1284c45e09e25d/gemfire-version-10.0.0.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.vmware.gemfire/gemfire-common/10.0.0/a2c4bc5962c56dad5e45e23e41de55c1126df843/gemfire-common-10.0.0.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-joda/2.14.2/ccdff9be351b308089411070395abf08374702ba/jackson-datatype-joda-2.14.2.jar
+  /Users/jpatrick/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.14.2/jackson-datatype-jsr310-2.14.2.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.aspectj/aspectjtools/1.9.19/defb5ca05401e536ba59dc1a8110d16725c5a474/aspectjtools-1.9.19.jar
+  /Users/jpatrick/.m2/repository/com/google/guava/guava/17.0/guava-17.0.jar
+  /Users/jpatrick/.m2/repository/jline/jline/2.12/jline-2.12.jar
+  /Users/jpatrick/.m2/repository/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.sun.xml.bind/jaxb-impl/4.0.2/20050c9054eb0e6cf8568c2ca83739d71df731d4/jaxb-impl-4.0.2.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.sun.xml.bind/jaxb-core/4.0.2/b93945e547a8b0d6ab34d0c93e30255b8bda9fc0/jaxb-core-4.0.2.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/jakarta.xml.bind/jakarta.xml.bind-api/4.0.0/bbb399208d288b15ec101fa4fcfc4bd77cedc97a/jakarta.xml.bind-api-4.0.0.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.sun.istack/istack-commons-runtime/4.1.1/9b3769c76235bc283b060da4fae2318c6d53f07e/istack-commons-runtime-4.1.1.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.eclipse.angus/angus-activation/2.0.0/72369f4e2314d38de2dcbb277141ef0226f73151/angus-activation-2.0.0.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/jakarta.activation/jakarta.activation-api/2.1.1/88c774ab863a21fb2fc4219af95379fafe499a31/jakarta.activation-api-2.1.1.jar
+  /Users/jpatrick/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.14.2/jackson-datatype-jdk8-2.14.2.jar
+  /Users/jpatrick/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.14.2/jackson-module-parameter-names-2.14.2.jar
+  /Users/jpatrick/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.14.2/jackson-databind-2.14.2.jar
+  /Users/jpatrick/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.14.2/jackson-annotations-2.14.2.jar
+  /Users/jpatrick/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.14.2/jackson-core-2.14.2.jar
+  /Users/jpatrick/.m2/repository/org/junit/platform/junit-platform-engine/1.9.2/junit-platform-engine-1.9.2.jar
+  /Users/jpatrick/.m2/repository/org/junit/platform/junit-platform-commons/1.9.2/junit-platform-commons-1.9.2.jar
+  /Users/jpatrick/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.19.0/log4j-to-slf4j-2.19.0.jar
+  /Users/jpatrick/.m2/repository/org/apache/logging/log4j/log4j-api/2.19.0/log4j-api-2.19.0.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-core/1.10.5/2f6c150e3f9f08841d40b2b366a8ecd0bac0a433/micrometer-core-1.10.5.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-observation/1.10.5/88cc220b1480ff39d1744f0413711e82701686a4/micrometer-observation-1.10.5.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-commons/1.10.5/bb78821020b0e6008e62ee919702b8d4249794d5/micrometer-commons-1.10.5.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/io.netty/netty-handler/4.1.90.Final/64f6946ce4d9189cec5341d3f5f86ac5653099b5/netty-handler-4.1.90.Final.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-unix-common/4.1.90.Final/e42282002cf22105e7e993651aead231246d0220/netty-transport-native-unix-common-4.1.90.Final.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec/4.1.90.Final/9992a22c82e18b8fd4f34989535f3e504e55aa37/netty-codec-4.1.90.Final.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport/4.1.90.Final/82d68da212f62b076c763f5efa9b072d2abc018f/netty-transport-4.1.90.Final.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/io.netty/netty-buffer/4.1.90.Final/937eb60c19c5f5c1326b96123c9ec3d33238d4d5/netty-buffer-4.1.90.Final.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver/4.1.90.Final/47c415d8c83f08b820ba00e6497a6cf19dd0155f/netty-resolver-4.1.90.Final.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/io.netty/netty-common/4.1.90.Final/43597a09382c6ae2bef469a9b3a41e8a17850638/netty-common-4.1.90.Final.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-crypto/6.0.2/4324d0283d642774fc6b34ae1ac699c6318b0dae/spring-security-crypto-6.0.2.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.aspectj/aspectjweaver/1.9.19/afbffb1210239fbba5cad73093c5b216d515838f/aspectjweaver-1.9.19.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy/1.12.23/d470526e8c4566c04e9ae5d3ccb62d1a7aa58986/byte-buddy-1.12.23.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.12.23/1cba11fdb72c383edacb909f79ae6870efd275e4/byte-buddy-agent-1.12.23.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5.14/1194890e6f56ec29177673f2f12d0b8e627dec98/httpclient-4.5.14.jar
+  /Users/jpatrick/.m2/repository/commons-codec/commons-codec/1.15/commons-codec-1.15.jar
+  /Users/jpatrick/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar
+  /Users/jpatrick/.m2/repository/org/hamcrest/hamcrest-core/2.2/hamcrest-core-2.2.jar
+  /Users/jpatrick/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.16/51cf043c87253c9f58b539c9f7e44c8894223850/httpcore-4.4.16.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/jakarta.servlet/jakarta.servlet-api/6.0.0/abecc699286e65035ebba9844c03931357a6a963/jakarta.servlet-api-6.0.0.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/javax.cache/cache-api/1.1.1/c56fb980eb5208bfee29a9a5b9d951aba076bd91/cache-api-1.1.1.jar
+  /Users/jpatrick/.m2/repository/com/jayway/jsonpath/json-path/2.7.0/json-path-2.7.0.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/net.minidev/json-smart/2.4.10/91cb329e9424bf32131eeb1ce2d17bf31b9899bc/json-smart-2.4.10.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.skyscreamer/jsonassert/1.5.1/6d842d0faf4cf6725c509a5e5347d319ee0431c3/jsonassert-1.5.1.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.4.6/61f81fe5d996f077f90a08ff5ca75d01dbe752c3/logback-classic-1.4.6.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-core/1.4.6/c4eb386f0fe83d61c2e8a91df50bb07e7ea95140/logback-core-1.4.6.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.mongodb/bson/4.8.2/301cb293127b2d2ee9c25307ae34b44f7f1e4964/bson-4.8.2.jar
+  /Users/jpatrick/.m2/repository/org/slf4j/jul-to-slf4j/2.0.7/jul-to-slf4j-2.0.7.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.apache.shiro/shiro-spring/1.10.0/9ca5d671c2504194a9dbe46201ad005a2a142d25/shiro-spring-1.10.0.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.apache.shiro/shiro-web/1.10.0/33606cf77bfc0e1019046b63346a110fb53453ae/shiro-web-1.10.0.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.apache.shiro/shiro-core/1.11.0/33a70c87e91968a299f1ee00f4e95050312346d/shiro-core-1.11.0.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.apache.shiro/shiro-cache/1.11.0/8030b6043b976a662366ce6f15eadaeb0ab53c49/shiro-cache-1.11.0.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.apache.shiro/shiro-crypto-hash/1.11.0/97f714074d0bf61f4de65ec65743bf243f55ab9b/shiro-crypto-hash-1.11.0.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.apache.shiro/shiro-crypto-cipher/1.11.0/c2fa772d19bc5e9b2dc76c50dee358e4211454f5/shiro-crypto-cipher-1.11.0.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.apache.shiro/shiro-config-ogdl/1.11.0/40b79c0a736ca9051715e00309653c517d6aab09/shiro-config-ogdl-1.11.0.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.apache.shiro/shiro-config-core/1.11.0/34a118c674d5f0767fb6a7c0bcee4cc5d44981b9/shiro-config-core-1.11.0.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.apache.shiro/shiro-event/1.11.0/352c3e23a26e8d5d748c9438c5a24a49816fa358/shiro-event-1.11.0.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.apache.shiro/shiro-crypto-core/1.11.0/ecc95ac395af56b30e536214932502a15d0cd81/shiro-crypto-core-1.11.0.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.apache.shiro/shiro-lang/1.11.0/804bf31e6cc251876d3197465b5152d26472802a/shiro-lang-1.11.0.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/2.0.7/41eb7184ea9d556f23e18b5cb99cad1f8581fc00/slf4j-api-2.0.7.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-websocket/10.1.7/2dbb5446ecea57d97293e041142534ad314580ea/tomcat-embed-websocket-10.1.7.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-core/10.1.7/d486363d49c6536556af38d7e1052d56a39319e5/tomcat-embed-core-10.1.7.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-el/10.1.7/dfaad36190c21beaaefb932333f7d955165810bb/tomcat-embed-el-10.1.7.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.xmlunit/xmlunit-core/2.9.1/e5833662d9a1279a37da3ef6f62a1da29fcd68c4/xmlunit-core-2.9.1.jar
+  /Users/jpatrick/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar
+  /Users/jpatrick/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar
+  /Users/jpatrick/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar
+  /Users/jpatrick/.m2/repository/javax/resource/javax.resource-api/1.7.1/javax.resource-api-1.7.1.jar
+  /Users/jpatrick/.m2/repository/org/jgroups/jgroups/3.6.14.Final/jgroups-3.6.14.Final.jar
+  /Users/jpatrick/.m2/repository/commons-validator/commons-validator/1.7/commons-validator-1.7.jar
+  /Users/jpatrick/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/it.unimi.dsi/fastutil/8.5.11/db3dbb47a54c65230c7a3ed00b1e695eae08872a/fastutil-8.5.11.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/jna-platform/5.12.1/97406a297c852f4a41e688a176ec675f72e8329/jna-platform-5.12.1.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/jna/5.12.1/b1e93a735caea94f503e95e6fe79bf9cdc1e985d/jna-5.12.1.jar
+  /Users/jpatrick/.m2/repository/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/io.github.classgraph/classgraph/4.8.154/c778f5a480b71d698b1d98c677315204dc9927f9/classgraph-4.8.154.jar
+  /Users/jpatrick/.m2/repository/com/healthmarketscience/rmiio/rmiio/2.1.2/rmiio-2.1.2.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.vmware.gemfire/gemfire-unsafe/10.0.0/bbe7ba0daaa0db57b5fa27df9f549239c5f6adc0/gemfire-unsafe-10.0.0.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.vmware.gemfire/gemfire-deployment-chained-classloader/10.0.0/26fb8c25546d7ac2344e21824ff5428e0eff242b/gemfire-deployment-chained-classloader-10.0.0.jar
+  /Users/jpatrick/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar
+  /Users/jpatrick/.m2/repository/javax/transaction/javax.transaction-api/1.3/javax.transaction-api-1.3.jar
+  /Users/jpatrick/.m2/repository/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar
+  /Users/jpatrick/.m2/repository/commons-digester/commons-digester/2.1/commons-digester-2.1.jar
+  /Users/jpatrick/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar
+  /Users/jpatrick/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar
+  /Users/jpatrick/.m2/repository/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar
+  /Users/jpatrick/.m2/repository/org/hdrhistogram/HdrHistogram/2.1.12/HdrHistogram-2.1.12.jar
+  /Users/jpatrick/.m2/repository/org/latencyutils/LatencyUtils/2.0.3/LatencyUtils-2.0.3.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/io.swagger.core.v3/swagger-annotations/2.2.7/9a630bca8950bde1a541af873aa6050851a31e72/swagger-annotations-2.2.7.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.owasp.encoder/encoder/1.2.3/35ae93be1524b161525da2c9a110019616f67548/encoder-1.2.3.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/net.minidev/accessors-smart/2.4.9/32e540749224c22c9b17de8137e916aae9057e22/accessors-smart-2.4.9.jar
+  /Users/jpatrick/.m2/repository/joda-time/joda-time/2.10.8/joda-time-2.10.8.jar
+  /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/9.3/8e6300ef51c1d801a7ed62d07cd221aca3a90640/asm-9.3.jar
+Library Path:
+  /Users/jpatrick/Library/Java/Extensions
+  /Library/Java/Extensions
+  /Network/Library/Java/Extensions
+  /System/Library/Java/Extensions
+  /usr/lib/java
+  .
+System Properties:
+    CONSOLE_LOG_CHARSET = UTF-8
+    FILE_LOG_CHARSET = UTF-8
+    PID = 67502
+    file.encoding = UTF-8
+    file.separator = /
+    gemfire.sys.security-peer-auth-init = org.springframework.data.gemfire.config.annotation.support.AutoConfiguredAuthenticationInitializer.newAuthenticationInitializer
+    java.awt.headless = true
+    java.class.version = 61.0
+    java.home = /Library/Java/JavaVirtualMachines/liberica-jdk-17.jdk/Contents/Home
+    java.io.tmpdir = /var/folders/dz/m2m_rjds3ng1ljnj2r5x24yh0000gn/T/
+    java.runtime.name = OpenJDK Runtime Environment
+    java.runtime.version = 17.0.5+8-LTS
+    java.specification.name = Java Platform API Specification
+    java.specification.vendor = Oracle Corporation
+    java.specification.version = 17
+    java.vendor = BellSoft
+    java.vendor.url = https://bell-sw.com/
+    java.vendor.url.bug = https://bell-sw.com/support
+    java.version = 17.0.5
+    java.version.date = 2022-10-18
+    java.vm.compressedOopsMode = Zero based
+    java.vm.info = mixed mode, sharing
+    java.vm.name = OpenJDK 64-Bit Server VM
+    java.vm.specification.name = Java Virtual Machine Specification
+    java.vm.specification.vendor = Oracle Corporation
+    java.vm.specification.version = 17
+    java.vm.vendor = BellSoft
+    java.vm.version = 17.0.5+8-LTS
+    jdk.debug = release
+    line.separator = 
+
+    native.encoding = UTF-8
+    org.gradle.internal.worker.tmpdir = /Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-samples/boot/security/build/tmp/test/work
+    org.gradle.native = false
+    org.gradle.test.worker = 1
+    os.version = 13.4
+    path.separator = :
+    spring.data.gemfire.cache.server.port = 56415
+    spring.data.gemfire.pool.servers = localhost[56415]
+    sun.arch.data.model = 64
+    sun.boot.library.path = /Library/Java/JavaVirtualMachines/liberica-jdk-17.jdk/Contents/Home/lib
+    sun.cpu.endian = little
+    sun.io.unicode.encoding = UnicodeBig
+    sun.java.command = worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 1'
+    sun.java.launcher = SUN_STANDARD
+    sun.jnu.encoding = UTF-8
+    sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+    sun.nio.ch.bugLevel = 
+    user.country = US
+    user.language = en
+    user.timezone = America/Los_Angeles
+    user.variant = 
+Log4J 2 Configuration:
+    org.apache.geode.logging.internal.SimpleLoggingProvider
+---------------------------------------------------------------------------
+
+2023-05-19 14:45:40,012  INFO he.geode.logging.internal.LoggingSession: 116 - Startup Configuration: 
+### GemFire Properties defined with api ###
+locators=
+log-level=config
+mcast-port=0
+name=SpringBasedClientCacheApplication
+security-client-auth-init=********
+security-peer-auth-init=********
+ssl-ciphers=any
+ssl-enabled-components=all
+ssl-endpoint-identification-enabled=false
+ssl-keystore=/Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-samples/boot/security/build/resources/main/trusted.keystore
+ssl-keystore-password=********
+ssl-keystore-type=JKS
+ssl-protocols=any
+ssl-require-authentication=true
+ssl-truststore=/Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-samples/boot/security/build/resources/main/trusted.keystore
+ssl-truststore-type=JKS
+ssl-use-default-context=false
+ssl-web-require-authentication=false
+### GemFire Properties using default values ###
+ack-severe-alert-threshold=0
+ack-wait-threshold=15
+archive-disk-space-limit=0
+archive-file-size-limit=0
+async-distribution-timeout=0
+async-max-queue-size=8
+async-queue-timeout=60000
+bind-address=
+cache-xml-file=cache.xml
+cluster-configuration-dir=
+cluster-ssl-ciphers=any
+cluster-ssl-enabled=false
+cluster-ssl-keystore=
+cluster-ssl-keystore-password=
+cluster-ssl-keystore-type=
+cluster-ssl-protocols=any
+cluster-ssl-require-authentication=true
+cluster-ssl-truststore=
+cluster-ssl-truststore-password=
+conflate-events=server
+conserve-sockets=false
+delta-propagation=true
+deploy-working-dir=/Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-samples/boot/security
+disable-auto-reconnect=false
+disable-jmx=false
+disable-tcp=false
+distributed-system-id=-1
+distributed-transactions=false
+durable-client-id=
+durable-client-timeout=300
+enable-cluster-configuration=true
+enable-management-rest-service=true
+enable-network-partition-detection=true
+enable-time-statistics=true
+enforce-unique-host=false
+gateway-ssl-ciphers=any
+gateway-ssl-enabled=false
+gateway-ssl-keystore=
+gateway-ssl-keystore-password=
+gateway-ssl-keystore-type=
+gateway-ssl-protocols=any
+gateway-ssl-require-authentication=true
+gateway-ssl-truststore=
+gateway-ssl-truststore-password=
+groups=
+http-service-bind-address=
+http-service-port=7070
+http-service-ssl-ciphers=any
+http-service-ssl-enabled=false
+http-service-ssl-keystore=
+http-service-ssl-keystore-password=
+http-service-ssl-keystore-type=
+http-service-ssl-protocols=any
+http-service-ssl-require-authentication=false
+http-service-ssl-truststore=
+http-service-ssl-truststore-password=
+jmx-manager=false
+jmx-manager-access-file=
+jmx-manager-bind-address=
+jmx-manager-hostname-for-clients=
+jmx-manager-http-port=7070
+jmx-manager-password-file=
+jmx-manager-port=1099
+jmx-manager-ssl-ciphers=any
+jmx-manager-ssl-enabled=false
+jmx-manager-ssl-keystore=
+jmx-manager-ssl-keystore-password=
+jmx-manager-ssl-keystore-type=
+jmx-manager-ssl-protocols=any
+jmx-manager-ssl-require-authentication=true
+jmx-manager-ssl-truststore=
+jmx-manager-ssl-truststore-password=
+jmx-manager-start=false
+jmx-manager-update-rate=2000
+load-cluster-configuration-from-dir=false
+locator-wait-time=0
+lock-memory=false
+log-disk-space-limit=0
+log-file=
+log-file-size-limit=0
+max-num-reconnect-tries=3
+max-wait-time-reconnect=60000
+mcast-address=239.192.81.1
+mcast-flow-control=1048576, 0.25, 5000
+mcast-recv-buffer-size=1048576
+mcast-send-buffer-size=65535
+mcast-ttl=32
+member-timeout=5000
+membership-port-range=41000-61000
+memcached-bind-address=
+memcached-port=0
+memcached-protocol=ASCII
+off-heap-memory-size=
+redundancy-zone=
+remote-locators=
+remove-unresponsive-client=false
+roles=
+security-auth-token-enabled-components=
+security-client-accessor=
+security-client-accessor-pp=
+security-client-authenticator=
+security-client-dhalgo=
+security-log-file=
+security-log-level=config
+security-manager=
+security-peer-authenticator=
+security-peer-verifymember-timeout=1000
+security-post-processor=
+security-udp-dhalgo=
+serializable-object-filter=!*
+server-bind-address=
+server-ssl-ciphers=any
+server-ssl-enabled=false
+server-ssl-keystore=
+server-ssl-keystore-password=
+server-ssl-keystore-type=
+server-ssl-protocols=any
+server-ssl-require-authentication=true
+server-ssl-truststore=
+server-ssl-truststore-password=
+socket-buffer-size=32768
+socket-lease-time=1800000
+ssl-client-protocols=
+ssl-cluster-alias=
+ssl-default-alias=
+ssl-gateway-alias=
+ssl-jmx-alias=
+ssl-locator-alias=
+ssl-parameter-extension=
+ssl-server-alias=
+ssl-server-protocols=
+ssl-truststore-password=
+ssl-web-alias=
+start-dev-rest-api=false
+start-locator=
+statistic-archive-file=
+statistic-sample-rate=1000
+statistic-sampling-enabled=true
+tcp-port=0
+thread-monitor-enabled=true
+thread-monitor-interval-ms=60000
+thread-monitor-time-limit-ms=120000
+udp-fragment-size=60000
+udp-recv-buffer-size=1048576
+udp-send-buffer-size=65535
+use-cluster-configuration=true
+use-udp-membership-messenger=false
+user-command-packages=
+validate-serializable-objects=false
+
+2023-05-19 14:45:40,017  INFO he.geode.logging.internal.LoggingSession: 120 - ClassLoader Modules:
+No modules found
+2023-05-19 14:45:40,027  INFO he.geode.internal.InternalDataSerializer: 490 - initializing InternalDataSerializer with 7 services
+2023-05-19 14:45:40,028  INFO alization.filter.SanctionedSerializables:  88 - loaded 0 sanctioned serializables from MembershipSanctionedSerializablesService
+2023-05-19 14:45:40,030  INFO alization.filter.SanctionedSerializables:  88 - loaded 42 sanctioned serializables from ManagementSanctionedSerializablesService
+2023-05-19 14:45:40,032  INFO alization.filter.SanctionedSerializables:  88 - loaded 6 sanctioned serializables from WANSanctionedSerializablesService
+2023-05-19 14:45:40,036  INFO alization.filter.SanctionedSerializables:  88 - loaded 6 sanctioned serializables from SerializationSanctionedSerializablesService
+2023-05-19 14:45:40,040  INFO alization.filter.SanctionedSerializables:  88 - loaded 116 sanctioned serializables from GfshSanctionedSerializablesService
+2023-05-19 14:45:40,052  INFO alization.filter.SanctionedSerializables:  88 - loaded 488 sanctioned serializables from CoreSanctionedSerializablesService
+2023-05-19 14:45:40,053  INFO alization.filter.SanctionedSerializables:  88 - loaded 1 sanctioned serializables from CQSanctionedSerializablesService
+2023-05-19 14:45:40,086  INFO                         org.apache.geode:   ? - [ThreadsMonitor] New Monitor object and process were created.
+
+2023-05-19 14:45:40,113  INFO e.internal.statistics.StatArchiveHandler: 316 - Disabling statistic archival.
+2023-05-19 14:45:40,235  INFO he.geode.internal.cache.GemFireCacheImpl:1012 - Running in client mode
+2023-05-19 14:45:40,319  INFO he.geode.internal.cache.GemFireCacheImpl:1527 - Initialized cache service org.apache.geode.cache.wan.internal.WanCopyRegionFunctionService
+2023-05-19 14:45:41,194  INFO he.geode.internal.cache.GemFireCacheImpl:1527 - Initialized cache service org.apache.geode.management.internal.cli.remote.OnlineCommandProcessor
+2023-05-19 14:45:41,207  INFO he.geode.internal.cache.GemFireCacheImpl:1527 - Initialized cache service org.apache.geode.cache.query.internal.QueryConfigurationServiceImpl
+2023-05-19 14:45:41,224  INFO ta.gemfire.client.ClientCacheFactoryBean: 270 - Created new VMware GemFire version [10.0.0] Cache [SpringBasedClientCacheApplication]
+2023-05-19 14:45:41,228  INFO ta.gemfire.client.ClientCacheFactoryBean: 270 - Connected to Distributed System [SpringBasedClientCacheApplication] as Member [jpatrickP6GQC(SpringBasedClientCacheApplication:67502:loner):0:e7bff935:SpringBasedClientCacheApplication] in Group(s) [[]] with Role(s) [[]] on Host [jpatrickP6GQC] having PID [67502]
+2023-05-19 14:45:41,417  INFO HttpSessionConfiguration$$SpringCGLIB$$0:1101 - Expiration is not allowed on Regions with a data management policy of PROXY
+2023-05-19 14:45:41,459  INFO t.SessionCacheTypeAwareRegionFactoryBean: 270 - Creating Region [ClusteredSpringSessions] in Cache [SpringBasedClientCacheApplication]
+2023-05-19 14:45:41,463  INFO a.gemfire.client.ClientRegionFactoryBean: 270 - Creating Region [ClusteredSpringSessions] in Cache [SpringBasedClientCacheApplication]
+2023-05-19 14:45:41,476  INFO a.gemfire.client.ClientRegionFactoryBean: 270 - Creating client Region [ClusteredSpringSessions]
+2023-05-19 14:45:41,660  INFO watch.FileWatchingX509ExtendedKeyManager: 219 - Initialized KeyManager for /Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-samples/boot/security/build/resources/main/trusted.keystore
+2023-05-19 14:45:41,668  INFO nternal.net.filewatch.PollingFileWatcher:  68 - Started watching /Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-samples/boot/security/build/resources/main/trusted.keystore
+2023-05-19 14:45:41,673  INFO tch.FileWatchingX509ExtendedTrustManager: 205 - Initialized TrustManager for /Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-samples/boot/security/build/resources/main/trusted.keystore
+2023-05-19 14:45:41,674  INFO nternal.net.filewatch.PollingFileWatcher:  68 - Started watching /Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-samples/boot/security/build/resources/main/trusted.keystore
+2023-05-19 14:45:41,737  INFO .apache.geode.internal.net.SocketCreator: 438 - Your SSL configuration disables hostname validation. ssl-endpoint-identification-enabled should be set to true when SSL is enabled. Please refer to the Apache GEODE SSL Documentation for SSL Property: ssl‑endpoint‑identification‑enabled
+2023-05-19 14:45:41,738  INFO .apache.geode.internal.net.SocketCreator: 438 - Your SSL configuration disables hostname validation. ssl-endpoint-identification-enabled should be set to true when SSL is enabled. Please refer to the Apache GEODE SSL Documentation for SSL Property: ssl‑endpoint‑identification‑enabled
+2023-05-19 14:45:42,079  INFO                         org.apache.geode:   ? - Updating membership port.  Port changed from 0 to 56438.  ID is now jpatrickP6GQC(SpringBasedClientCacheApplication:67502:loner):0:e7bff935:SpringBasedClientCacheApplication
+2023-05-19 14:45:42,280  INFO che.geode.cache.client.internal.PoolImpl: 375 - Pool DEFAULT started with multiuser-authentication=false
+2023-05-19 14:45:42,281  INFO al.cache.tier.sockets.CacheClientUpdater:1588 - Cache Client Updater Thread  on jpatrickP6GQC(SpringBasedCacheServerApplication:67503:loner):56415:0aa4f935:SpringBasedCacheServerApplication port 56415 (localhost:56415) : ready to process messages.
+2023-05-19 14:45:42,470  INFO .support.CacheTypeAwareRegionFactoryBean: 270 - Creating Region [Customers] in Cache [SpringBasedClientCacheApplication]
+2023-05-19 14:45:42,473  INFO a.gemfire.client.ClientRegionFactoryBean: 270 - Creating Region [Customers] in Cache [SpringBasedClientCacheApplication]
+2023-05-19 14:45:42,474  INFO a.gemfire.client.ClientRegionFactoryBean: 270 - Creating client Region [Customers]
+2023-05-19 14:45:43,576  INFO .cache.query.internal.index.IndexManager:1627 - Using Compact Range index implementation for 'principalNameIndex' on region /ClusteredSpringSessions
+2023-05-19 14:45:43,583  INFO .cache.query.internal.index.IndexManager:1664 - Initialized and loaded entries into the index 
+2023-05-19 14:45:43,928  WARN Exporter$ClassPathImportResourceResolver: 685 - Resource [class path resource [data-customers.json]] at location [classpath:data-customers.json] does not exist; skipping import
+2023-05-19 14:45:43,928  WARN Exporter$ClassPathImportResourceResolver: 671 - Resource [classpath:data-customers.json] for Region [/Customers] could not be found; skipping import for Region
+2023-05-19 14:45:43,930  WARN Exporter$ClassPathImportResourceResolver: 685 - Resource [class path resource [data-clusteredspringsessions.json]] at location [classpath:data-clusteredspringsessions.json] does not exist; skipping import
+2023-05-19 14:45:43,930  WARN Exporter$ClassPathImportResourceResolver: 671 - Resource [classpath:data-clusteredspringsessions.json] for Region [/ClusteredSpringSessions] could not be found; skipping import for Region
+?[34mStarted BootGeodeSecurityClientApplicationIntegrationTests in 8.288 seconds (process running for 17.761)?[0;39m 
+2023-05-19 14:45:44,101  INFO g.apache.geode.pdx.internal.TypeRegistry: 212 - Caching PdxType[dsid=0, typenum=14764549
+        name=example.app.security.client.model.Customer
+        fields=[
+        id:Object:identity:0:idx0(relativeOffset)=0:idx1(vlfOffsetIndex)=-1
+        name:String:1:1:idx0(relativeOffset)=0:idx1(vlfOffsetIndex)=1]]
+?[34mSuccessfully put [Customer(name=William Evans)] in Region [Customers]?[0;39m 
+?[34mAttempting to read from Region [Customers]...?[0;39m 
+?[34mRead failed because "jdoe not authorized for DATA:READ:Customers:2"?[0;39m 
+2023-05-19 14:45:44,810  INFO e.cache.client.internal.QueueManagerImpl: 389 - Primary subscription endpoint localhost:56415,jpatrickP6GQC(SpringBasedCacheServerApplication:67503:loner):56415:0aa4f935:SpringBasedCacheServerApplication crashed. Scheduling recovery.
+2023-05-19 14:45:44,818  INFO e.cache.client.internal.QueueManagerImpl: 430 - Cache client updater for Queue on endpoint localhost:56415,jpatrickP6GQC(SpringBasedCacheServerApplication:67503:loner):56415:0aa4f935:SpringBasedCacheServerApplication exiting. Scheduling recovery.
+2023-05-19 14:45:44,819  INFO e.cache.client.internal.QueueManagerImpl: 877 - SubscriptionManager redundancy satisfier - primary endpoint has been lost. Attempting to recover.
+2023-05-19 14:45:44,865  INFO ata.gemfire.tests.process.ProcessWrapper: 325 - Process [-1] has stopped
+
+2023-05-19 14:45:44,891  INFO he.geode.internal.cache.GemFireCacheImpl:2228 - GemFireCache[id = 844185066; isClosing = true; isShutDownAll = false; created = Fri May 19 14:45:40 PDT 2023; server = false; copyOnRead = false; lockLease = 120; lockTimeout = 60]: Now closing.
+2023-05-19 14:45:44,928  INFO che.geode.cache.client.internal.PoolImpl: 602 - Destroying connection pool DEFAULT
+]]></system-out>
+  <system-err><![CDATA[[FORK] - 
+[FORK] -   .   ____          _            __ _ _
+[FORK] -  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+[FORK] - ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+[FORK] -  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+[FORK] -   '  |____| .__|_| |_|_| |_\__, | / / / /
+[FORK] -  =========|_|==============|___/=/_/_/_/
+[FORK] -  :: Spring Boot ::                (v3.0.5)
+[FORK] - 
+[FORK] - ?[34mStarting BootGeodeSecurityServerApplication using Java 17.0.5 with PID 67503 (/Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-samples/boot/security/build/classes/java/main started by jpatrick in /Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-samples/boot/security/BootGeodeSecurityServerApplication-2023-05-19-02-45-27)?[0;39m 
+[FORK] - ?[34mNo active profile set, falling back to 1 default profile: "default"?[0;39m 
+[FORK] - 2023-05-19 14:45:30,553  INFO fig.annotation.ClusterAwareConfiguration: 503 - Failed to connect to localhost[40404]
+[FORK] - 2023-05-19 14:45:30,563  INFO fig.annotation.ClusterAwareConfiguration: 503 - Failed to connect to localhost[10334]
+[FORK] - 2023-05-19 14:45:30,564  INFO fig.annotation.ClusterAwareConfiguration: 503 - Failed to connect to localhost[56415]
+[FORK] - 2023-05-19 14:45:30,571  INFO fig.annotation.ClusterAwareConfiguration: 642 - No cluster was found; Spring Boot application will run in standalone [LOCAL] mode unless strictMode is false and the application is running in a Cloud-managed Environment
+[FORK] - 2023-05-19 14:45:31,012  INFO y.config.RepositoryConfigurationDelegate: 138 - Bootstrapping Spring Data Gemfire repositories in DEFAULT mode.
+[FORK] - 2023-05-19 14:45:31,026  INFO y.config.RepositoryConfigurationDelegate: 208 - Finished Spring Data repository scanning in 7 ms. Found 0 Gemfire repository interfaces.
+[FORK] - 2023-05-19 14:45:31,656  INFO xt.annotation.ConfigurationClassEnhancer: 323 - @Bean method ApacheShiroSecurityConfiguration.shiroGemFireBeanFactoryPostProcessor is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+[FORK] - 2023-05-19 14:45:31,661  INFO xt.annotation.ConfigurationClassEnhancer: 323 - @Bean method PdxConfiguration.pdxDiskStoreAwareBeanFactoryPostProcessor is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+[FORK] - 2023-05-19 14:45:31,664  INFO xt.annotation.ConfigurationClassEnhancer: 323 - @Bean method RegionTemplateAutoConfiguration.regionTemplateBeanFactoryPostProcessor is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+[FORK] - 2023-05-19 14:45:31,880  INFO trationDelegate$BeanPostProcessorChecker: 409 - Bean 'org.springframework.data.gemfire.config.annotation.BeanFactoryLocatorConfiguration' of type [org.springframework.data.gemfire.config.annotation.BeanFactoryLocatorConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[FORK] - 2023-05-19 14:45:31,888  INFO trationDelegate$BeanPostProcessorChecker: 409 - Bean 'org.springframework.geode.boot.autoconfigure.DataImportExportAutoConfiguration' of type [org.springframework.geode.boot.autoconfigure.DataImportExportAutoConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[FORK] - 2023-05-19 14:45:32,714  INFO e.logging.internal.LoggingProviderLoader:  78 - Using org.apache.geode.logging.internal.SimpleLoggingProvider for service org.apache.geode.logging.internal.spi.LoggingProvider
+[FORK] - 2023-05-19 14:45:32,847  INFO he.geode.logging.internal.LoggingSession: 112 - 
+[FORK] - ---------------------------------------------------------------------------
+[FORK] -   
+[FORK] -   Licensed to the Apache Software Foundation (ASF) under one or more
+[FORK] -   contributor license agreements.  See the NOTICE file distributed with this
+[FORK] -   work for additional information regarding copyright ownership.
+[FORK] -    
+[FORK] -   The ASF licenses this file to You under the Apache License, Version 2.0
+[FORK] -   (the "License"); you may not use this file except in compliance with the
+[FORK] -   License.  You may obtain a copy of the License at
+[FORK] -   
+[FORK] -   http://www.apache.org/licenses/LICENSE-2.0
+[FORK] -   
+[FORK] -   Unless required by applicable law or agreed to in writing, software
+[FORK] -   distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+[FORK] -   WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
+[FORK] -   License for the specific language governing permissions and limitations
+[FORK] -   under the License.
+[FORK] -   
+[FORK] - ---------------------------------------------------------------------------
+[FORK] - ----------------------------------------
+[FORK] - VMware GemFire
+[FORK] - ----------------------------------------
+[FORK] - Build-Java-Vendor: BellSoft
+[FORK] - GemFire-Source-Date: 2023-04-07 14:35:30 -0700
+[FORK] - Build-Platform: Linux 5.10.162+ amd64
+[FORK] - Build-Java-Version: 1.8.0_362
+[FORK] - GemFire-Source-Revision: 2a5ca3b62305f905c90704e265ab05aed659d745
+[FORK] - Build-Id: root 1810
+[FORK] - Product-Name: VMware GemFire
+[FORK] - GemFire-Source-Repository: support/10.0
+[FORK] - GemFire-Version: 10.0.0
+[FORK] - 
+[FORK] - Running on: Running on: /192.168.1.8, 10 cpu(s), x86_64 Mac OS X 13.4 
+[FORK] - ---------------------------------------------------------------------------
+[FORK] - Communications version: 200
+[FORK] - Process ID: 67503
+[FORK] - User: jpatrick
+[FORK] - Current dir: /Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-samples/boot/security/BootGeodeSecurityServerApplication-2023-05-19-02-45-27
+[FORK] - Home dir: /Users/jpatrick
+[FORK] - Command Line Parameters:
+[FORK] -   -ea
+[FORK] -   --add-opens=java.base/java.lang=ALL-UNNAMED
+[FORK] -   --add-opens=java.base/java.nio=ALL-UNNAMED
+[FORK] -   --add-opens=java.base/java.util=ALL-UNNAMED
+[FORK] -   --add-opens=jdk.management/com.sun.management.internal=ALL-UNNAMED
+[FORK] -   --add-exports=java.base/sun.nio.ch=ALL-UNNAMED
+[FORK] -   --add-exports=java.management/com.sun.jmx.remote.security=ALL-UNNAMED
+[FORK] -   -Dspring.data.gemfire.pool.servers=localhost[56415]
+[FORK] -   -Dspring.data.gemfire.cache.server.port=56415
+[FORK] -   -Dspring.data.gemfire.cache.server.port=56415
+[FORK] - Class Path:
+[FORK] -   /Users/jpatrick/.gradle/caches/7.6/workerMain/gradle-worker.jar
+[FORK] -   /Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-samples/boot/security/build/classes/java/test
+[FORK] -   /Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-samples/boot/security/build/classes/java/main
+[FORK] -   /Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-samples/boot/security/build/resources/main
+[FORK] -   /Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-starter-test/build/libs/spring-gemfire-starter-test-1.0.0-build.9999.jar
+[FORK] -   /Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-starter/build/libs/spring-gemfire-starter-1.0.0-build.9999.jar
+[FORK] -   /Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-autoconfigure/build/libs/spring-gemfire-autoconfigure-1.0.0-build.9999.jar
+[FORK] -   /Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire/build/libs/spring-gemfire-1.0.0-build.9999.jar
+[FORK] -   /Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-extensions/build/libs/spring-gemfire-extensions-1.0.0-build.9999.jar
+[FORK] -   /Users/jpatrick/.m2/repository/com/vmware/gemfire/spring-test-gemfire-10.0-3.0/1.0.0-build.9999/spring-test-gemfire-10.0-3.0-1.0.0-build.9999.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-test/3.0.5/cf9fd5d146ce335eaec708b5bde40445f94ee813/spring-boot-starter-test-3.0.5.jar
+[FORK] -   /Users/jpatrick/.m2/repository/org/assertj/assertj-core/3.23.1/assertj-core-3.23.1.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.26/8f8cf0372abf564913e9796623aac4c8ea44025a/lombok-1.18.26.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-web/3.0.5/c8f9a85fed134963b69cb2f2a0dcf151047b6cd1/spring-boot-starter-web-3.0.5.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter/5.9.2/26c586fbe0ebd81b48c9f11f0d998124248697ae/junit-jupiter-5.9.2.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-params/5.9.2/bc2765afb7b85b583c710dd259a11c6b8c39e912/junit-jupiter-params-5.9.2.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.junit.vintage/junit-vintage-engine/5.9.2/53421816bde124a564a64ba005dcc0c8e66a9722/junit-vintage-engine-5.9.2.jar
+[FORK] -   /Users/jpatrick/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar
+[FORK] -   /Users/jpatrick/.m2/repository/org/mockito/mockito-junit-jupiter/4.8.1/mockito-junit-jupiter-4.8.1.jar
+[FORK] -   /Users/jpatrick/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.9.2/junit-jupiter-engine-5.9.2.jar
+[FORK] -   /Users/jpatrick/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.9.2/junit-jupiter-api-5.9.2.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.mockito/mockito-core/4.8.1/d8eb9dec8747d08645347bb8c69088ac83197975/mockito-core-4.8.1.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework/spring-test/6.0.7/c0734c4b554ee485b80cdf193f9b9f5e201d29ae/spring-test-6.0.7.jar
+[FORK] -   /Users/jpatrick/.m2/repository/edu/umd/cs/mtc/multithreadedtc/1.01/multithreadedtc-1.01.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-json/3.0.5/d9b191badbcc63083770ba111f9290e45e512a54/spring-boot-starter-json-3.0.5.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter/3.0.5/5d13714accd45b2b1af0d5de1495b2ed9a49fe89/spring-boot-starter-3.0.5.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.vmware.gemfire/gemfire-wan/10.0.0/3a28694779b635fa663c0697cf94300654fe7112/gemfire-wan-10.0.0.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.vmware.gemfire/gemfire-gfsh/10.0.0/a0e6625eedf2aff0a98a3fe99cde3015a0b76e1f/gemfire-gfsh-10.0.0.jar
+[FORK] -   /Users/jpatrick/.m2/repository/org/springframework/shell/spring-shell/1.2.0.RELEASE/spring-shell-1.2.0.RELEASE.jar
+[FORK] -   /Users/jpatrick/.m2/repository/com/vmware/gemfire/spring-session-3.0-gemfire-10.0/1.0.0-build.9999/spring-session-3.0-gemfire-10.0-1.0.0-build.9999.jar
+[FORK] -   /Users/jpatrick/.m2/repository/com/vmware/gemfire/spring-data-3.0-gemfire-10.0/1.0.0-build.9999/spring-data-3.0-gemfire-10.0-1.0.0-build.9999.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context-support/6.0.7/8761cfa49054ecc46259e3a79f58fb6d1d73dd9c/spring-context-support-6.0.7.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-test-autoconfigure/3.0.5/8abab8961ac6a634a9bb1edea4182ab54297c947/spring-boot-test-autoconfigure-3.0.5.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/3.0.5/fa43d48c30a0105562ac8b0fb34e58deaa19737c/spring-boot-autoconfigure-3.0.5.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-test/3.0.5/2895ed0f90fc2a52fc27172f678ce05c1c256b37/spring-boot-test-3.0.5.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/3.0.5/a2aea9c55893accab2c9f3a987b5b58b277bfd42/spring-boot-3.0.5.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-web/6.0.2/df14b8a1d844cfb5f92e9a3ba3cd78ec29015570/spring-security-web-6.0.2.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-core/6.0.2/59c7e3fe6e9084ef51ec950c4bc45810d4dc8d5/spring-security-core-6.0.2.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/6.0.7/2fdde1a0d3706a85fe318a4f6ebffb4f4f7c4c6d/spring-webmvc-6.0.7.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/6.0.7/439a4cc348c87014fa7ae7d20c6498a10283a6cf/spring-context-6.0.7.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.vmware.gemfire/gemfire-cq/10.0.0/ac9c512d0408ebbaa6f0a553302b613bd9eba1b0/gemfire-cq-10.0.0.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.vmware.gemfire/gemfire-core/10.0.0/fbdc5e1878c95a79770a462ac17f93a6601860bb/gemfire-core-10.0.0.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.vmware.gemfire/gemfire-management/10.0.0/de5ab7e5dfb087629eb4444edf3dcf53e2a516bc/gemfire-management-10.0.0.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/6.0.7/43f8ac9c46c15d57fca00fc81ce1f2849f6cecb9/spring-web-6.0.7.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/6.0.7/d062bbaf50e4acb24edda5202a9732fee38e978b/spring-tx-6.0.7.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/3.0.4/3fb1dacb8a71a36b73a3f1ad22cc8cd3932420b3/spring-data-commons-3.0.4.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/6.0.7/d5b0bb68c88a4027d8e5d42f438088db86f29660/spring-aop-6.0.7.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/6.0.7/1abeec454cd1a2a40cff11ed5c388228eb021871/spring-beans-6.0.7.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/6.0.7/c9c93c88d35d02a0291ad7051065544fc0b674a3/spring-expression-6.0.7.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/6.0.7/33ad624acd55c846ec56fd65bd954b23fb2681b3/spring-core-6.0.7.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.session/spring-session-core/3.0.1/9a6a7bf476dfb3fed6df182e09899f67a414b051/spring-session-core-3.0.1.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jcl/6.0.7/6250e61ccf71b83204669e0501533278ef7888f8/spring-jcl-6.0.7.jar
+[FORK] -   /Users/jpatrick/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar
+[FORK] -   /Users/jpatrick/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-configuration-processor/3.0.5/a042112791600faeb5c7d65d71277a9c9dd9996c/spring-boot-configuration-processor-3.0.5.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure-processor/3.0.5/4993b1fdc46f39a05e6ac2cd85c1c9353f2d0ee7/spring-boot-autoconfigure-processor-3.0.5.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-logging/3.0.5/693455577f6f8c8a53f5992479358e955df74920/spring-boot-starter-logging-3.0.5.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-tomcat/3.0.5/5dd71e501f2be01a359ef7187e28a523379c23f2/spring-boot-starter-tomcat-3.0.5.jar
+[FORK] -   /Users/jpatrick/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar
+[FORK] -   /Users/jpatrick/.m2/repository/org/yaml/snakeyaml/1.33/snakeyaml-1.33.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.vmware.gemfire/gemfire-membership/10.0.0/af5f5c69f67554a2cb433be21c03cd6ead9660f7/gemfire-membership-10.0.0.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.vmware.gemfire/gemfire-tcp-messenger/10.0.0/f30cde15ac71ab03d1dcb9490491d80f7e0ceaa6/gemfire-tcp-messenger-10.0.0.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.vmware.gemfire/gemfire-tcp-server/10.0.0/5a702e3ea13806705a52bbd1e0b1498f1fa2f73a/gemfire-tcp-server-10.0.0.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.vmware.gemfire/gemfire-serialization/10.0.0/2a7081341d0bd95dd00b217b80d1da156b393770/gemfire-serialization-10.0.0.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.vmware.gemfire/gemfire-logging/10.0.0/4cf0af3ffd98fe7775cb5cb5fb23cf8fa3a68ffb/gemfire-logging-10.0.0.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.vmware.gemfire/gemfire-version/10.0.0/177eead10858b0a833a812387b1284c45e09e25d/gemfire-version-10.0.0.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.vmware.gemfire/gemfire-common/10.0.0/a2c4bc5962c56dad5e45e23e41de55c1126df843/gemfire-common-10.0.0.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-joda/2.14.2/ccdff9be351b308089411070395abf08374702ba/jackson-datatype-joda-2.14.2.jar
+[FORK] -   /Users/jpatrick/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.14.2/jackson-datatype-jsr310-2.14.2.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.aspectj/aspectjtools/1.9.19/defb5ca05401e536ba59dc1a8110d16725c5a474/aspectjtools-1.9.19.jar
+[FORK] -   /Users/jpatrick/.m2/repository/com/google/guava/guava/17.0/guava-17.0.jar
+[FORK] -   /Users/jpatrick/.m2/repository/jline/jline/2.12/jline-2.12.jar
+[FORK] -   /Users/jpatrick/.m2/repository/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.sun.xml.bind/jaxb-impl/4.0.2/20050c9054eb0e6cf8568c2ca83739d71df731d4/jaxb-impl-4.0.2.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.sun.xml.bind/jaxb-core/4.0.2/b93945e547a8b0d6ab34d0c93e30255b8bda9fc0/jaxb-core-4.0.2.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/jakarta.xml.bind/jakarta.xml.bind-api/4.0.0/bbb399208d288b15ec101fa4fcfc4bd77cedc97a/jakarta.xml.bind-api-4.0.0.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.sun.istack/istack-commons-runtime/4.1.1/9b3769c76235bc283b060da4fae2318c6d53f07e/istack-commons-runtime-4.1.1.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.eclipse.angus/angus-activation/2.0.0/72369f4e2314d38de2dcbb277141ef0226f73151/angus-activation-2.0.0.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/jakarta.activation/jakarta.activation-api/2.1.1/88c774ab863a21fb2fc4219af95379fafe499a31/jakarta.activation-api-2.1.1.jar
+[FORK] -   /Users/jpatrick/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.14.2/jackson-datatype-jdk8-2.14.2.jar
+[FORK] -   /Users/jpatrick/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.14.2/jackson-module-parameter-names-2.14.2.jar
+[FORK] -   /Users/jpatrick/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.14.2/jackson-databind-2.14.2.jar
+[FORK] -   /Users/jpatrick/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.14.2/jackson-annotations-2.14.2.jar
+[FORK] -   /Users/jpatrick/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.14.2/jackson-core-2.14.2.jar
+[FORK] -   /Users/jpatrick/.m2/repository/org/junit/platform/junit-platform-engine/1.9.2/junit-platform-engine-1.9.2.jar
+[FORK] -   /Users/jpatrick/.m2/repository/org/junit/platform/junit-platform-commons/1.9.2/junit-platform-commons-1.9.2.jar
+[FORK] -   /Users/jpatrick/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.19.0/log4j-to-slf4j-2.19.0.jar
+[FORK] -   /Users/jpatrick/.m2/repository/org/apache/logging/log4j/log4j-api/2.19.0/log4j-api-2.19.0.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-core/1.10.5/2f6c150e3f9f08841d40b2b366a8ecd0bac0a433/micrometer-core-1.10.5.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-observation/1.10.5/88cc220b1480ff39d1744f0413711e82701686a4/micrometer-observation-1.10.5.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-commons/1.10.5/bb78821020b0e6008e62ee919702b8d4249794d5/micrometer-commons-1.10.5.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/io.netty/netty-handler/4.1.90.Final/64f6946ce4d9189cec5341d3f5f86ac5653099b5/netty-handler-4.1.90.Final.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-unix-common/4.1.90.Final/e42282002cf22105e7e993651aead231246d0220/netty-transport-native-unix-common-4.1.90.Final.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec/4.1.90.Final/9992a22c82e18b8fd4f34989535f3e504e55aa37/netty-codec-4.1.90.Final.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport/4.1.90.Final/82d68da212f62b076c763f5efa9b072d2abc018f/netty-transport-4.1.90.Final.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/io.netty/netty-buffer/4.1.90.Final/937eb60c19c5f5c1326b96123c9ec3d33238d4d5/netty-buffer-4.1.90.Final.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver/4.1.90.Final/47c415d8c83f08b820ba00e6497a6cf19dd0155f/netty-resolver-4.1.90.Final.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/io.netty/netty-common/4.1.90.Final/43597a09382c6ae2bef469a9b3a41e8a17850638/netty-common-4.1.90.Final.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-crypto/6.0.2/4324d0283d642774fc6b34ae1ac699c6318b0dae/spring-security-crypto-6.0.2.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.aspectj/aspectjweaver/1.9.19/afbffb1210239fbba5cad73093c5b216d515838f/aspectjweaver-1.9.19.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy/1.12.23/d470526e8c4566c04e9ae5d3ccb62d1a7aa58986/byte-buddy-1.12.23.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.12.23/1cba11fdb72c383edacb909f79ae6870efd275e4/byte-buddy-agent-1.12.23.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5.14/1194890e6f56ec29177673f2f12d0b8e627dec98/httpclient-4.5.14.jar
+[FORK] -   /Users/jpatrick/.m2/repository/commons-codec/commons-codec/1.15/commons-codec-1.15.jar
+[FORK] -   /Users/jpatrick/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar
+[FORK] -   /Users/jpatrick/.m2/repository/org/hamcrest/hamcrest-core/2.2/hamcrest-core-2.2.jar
+[FORK] -   /Users/jpatrick/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.16/51cf043c87253c9f58b539c9f7e44c8894223850/httpcore-4.4.16.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/jakarta.servlet/jakarta.servlet-api/6.0.0/abecc699286e65035ebba9844c03931357a6a963/jakarta.servlet-api-6.0.0.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/javax.cache/cache-api/1.1.1/c56fb980eb5208bfee29a9a5b9d951aba076bd91/cache-api-1.1.1.jar
+[FORK] -   /Users/jpatrick/.m2/repository/com/jayway/jsonpath/json-path/2.7.0/json-path-2.7.0.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/net.minidev/json-smart/2.4.10/91cb329e9424bf32131eeb1ce2d17bf31b9899bc/json-smart-2.4.10.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.skyscreamer/jsonassert/1.5.1/6d842d0faf4cf6725c509a5e5347d319ee0431c3/jsonassert-1.5.1.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.4.6/61f81fe5d996f077f90a08ff5ca75d01dbe752c3/logback-classic-1.4.6.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-core/1.4.6/c4eb386f0fe83d61c2e8a91df50bb07e7ea95140/logback-core-1.4.6.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.mongodb/bson/4.8.2/301cb293127b2d2ee9c25307ae34b44f7f1e4964/bson-4.8.2.jar
+[FORK] -   /Users/jpatrick/.m2/repository/org/slf4j/jul-to-slf4j/2.0.7/jul-to-slf4j-2.0.7.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.apache.shiro/shiro-spring/1.10.0/9ca5d671c2504194a9dbe46201ad005a2a142d25/shiro-spring-1.10.0.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.apache.shiro/shiro-web/1.10.0/33606cf77bfc0e1019046b63346a110fb53453ae/shiro-web-1.10.0.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.apache.shiro/shiro-core/1.11.0/33a70c87e91968a299f1ee00f4e95050312346d/shiro-core-1.11.0.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.apache.shiro/shiro-cache/1.11.0/8030b6043b976a662366ce6f15eadaeb0ab53c49/shiro-cache-1.11.0.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.apache.shiro/shiro-crypto-hash/1.11.0/97f714074d0bf61f4de65ec65743bf243f55ab9b/shiro-crypto-hash-1.11.0.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.apache.shiro/shiro-crypto-cipher/1.11.0/c2fa772d19bc5e9b2dc76c50dee358e4211454f5/shiro-crypto-cipher-1.11.0.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.apache.shiro/shiro-config-ogdl/1.11.0/40b79c0a736ca9051715e00309653c517d6aab09/shiro-config-ogdl-1.11.0.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.apache.shiro/shiro-config-core/1.11.0/34a118c674d5f0767fb6a7c0bcee4cc5d44981b9/shiro-config-core-1.11.0.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.apache.shiro/shiro-event/1.11.0/352c3e23a26e8d5d748c9438c5a24a49816fa358/shiro-event-1.11.0.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.apache.shiro/shiro-crypto-core/1.11.0/ecc95ac395af56b30e536214932502a15d0cd81/shiro-crypto-core-1.11.0.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.apache.shiro/shiro-lang/1.11.0/804bf31e6cc251876d3197465b5152d26472802a/shiro-lang-1.11.0.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/2.0.7/41eb7184ea9d556f23e18b5cb99cad1f8581fc00/slf4j-api-2.0.7.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-websocket/10.1.7/2dbb5446ecea57d97293e041142534ad314580ea/tomcat-embed-websocket-10.1.7.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-core/10.1.7/d486363d49c6536556af38d7e1052d56a39319e5/tomcat-embed-core-10.1.7.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-el/10.1.7/dfaad36190c21beaaefb932333f7d955165810bb/tomcat-embed-el-10.1.7.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.xmlunit/xmlunit-core/2.9.1/e5833662d9a1279a37da3ef6f62a1da29fcd68c4/xmlunit-core-2.9.1.jar
+[FORK] -   /Users/jpatrick/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar
+[FORK] -   /Users/jpatrick/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar
+[FORK] -   /Users/jpatrick/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar
+[FORK] -   /Users/jpatrick/.m2/repository/javax/resource/javax.resource-api/1.7.1/javax.resource-api-1.7.1.jar
+[FORK] -   /Users/jpatrick/.m2/repository/org/jgroups/jgroups/3.6.14.Final/jgroups-3.6.14.Final.jar
+[FORK] -   /Users/jpatrick/.m2/repository/commons-validator/commons-validator/1.7/commons-validator-1.7.jar
+[FORK] -   /Users/jpatrick/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/it.unimi.dsi/fastutil/8.5.11/db3dbb47a54c65230c7a3ed00b1e695eae08872a/fastutil-8.5.11.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/jna-platform/5.12.1/97406a297c852f4a41e688a176ec675f72e8329/jna-platform-5.12.1.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/jna/5.12.1/b1e93a735caea94f503e95e6fe79bf9cdc1e985d/jna-5.12.1.jar
+[FORK] -   /Users/jpatrick/.m2/repository/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/io.github.classgraph/classgraph/4.8.154/c778f5a480b71d698b1d98c677315204dc9927f9/classgraph-4.8.154.jar
+[FORK] -   /Users/jpatrick/.m2/repository/com/healthmarketscience/rmiio/rmiio/2.1.2/rmiio-2.1.2.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.vmware.gemfire/gemfire-unsafe/10.0.0/bbe7ba0daaa0db57b5fa27df9f549239c5f6adc0/gemfire-unsafe-10.0.0.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/com.vmware.gemfire/gemfire-deployment-chained-classloader/10.0.0/26fb8c25546d7ac2344e21824ff5428e0eff242b/gemfire-deployment-chained-classloader-10.0.0.jar
+[FORK] -   /Users/jpatrick/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar
+[FORK] -   /Users/jpatrick/.m2/repository/javax/transaction/javax.transaction-api/1.3/javax.transaction-api-1.3.jar
+[FORK] -   /Users/jpatrick/.m2/repository/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar
+[FORK] -   /Users/jpatrick/.m2/repository/commons-digester/commons-digester/2.1/commons-digester-2.1.jar
+[FORK] -   /Users/jpatrick/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar
+[FORK] -   /Users/jpatrick/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar
+[FORK] -   /Users/jpatrick/.m2/repository/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar
+[FORK] -   /Users/jpatrick/.m2/repository/org/hdrhistogram/HdrHistogram/2.1.12/HdrHistogram-2.1.12.jar
+[FORK] -   /Users/jpatrick/.m2/repository/org/latencyutils/LatencyUtils/2.0.3/LatencyUtils-2.0.3.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/io.swagger.core.v3/swagger-annotations/2.2.7/9a630bca8950bde1a541af873aa6050851a31e72/swagger-annotations-2.2.7.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.owasp.encoder/encoder/1.2.3/35ae93be1524b161525da2c9a110019616f67548/encoder-1.2.3.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/net.minidev/accessors-smart/2.4.9/32e540749224c22c9b17de8137e916aae9057e22/accessors-smart-2.4.9.jar
+[FORK] -   /Users/jpatrick/.m2/repository/joda-time/joda-time/2.10.8/joda-time-2.10.8.jar
+[FORK] -   /Users/jpatrick/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/9.3/8e6300ef51c1d801a7ed62d07cd221aca3a90640/asm-9.3.jar
+[FORK] - Library Path:
+[FORK] -   /Users/jpatrick/Library/Java/Extensions
+[FORK] -   /Library/Java/Extensions
+[FORK] -   /Network/Library/Java/Extensions
+[FORK] -   /System/Library/Java/Extensions
+[FORK] -   /usr/lib/java
+[FORK] -   .
+[FORK] - System Properties:
+[FORK] -     CONSOLE_LOG_CHARSET = UTF-8
+[FORK] -     FILE_LOG_CHARSET = UTF-8
+[FORK] -     PID = 67503
+[FORK] -     file.encoding = UTF-8
+[FORK] -     file.separator = /
+[FORK] -     gemfire.sys.security-peer-auth-init = org.springframework.data.gemfire.config.annotation.support.AutoConfiguredAuthenticationInitializer.newAuthenticationInitializer
+[FORK] -     java.awt.headless = true
+[FORK] -     java.class.version = 61.0
+[FORK] -     java.home = /Library/Java/JavaVirtualMachines/liberica-jdk-17.jdk/Contents/Home
+[FORK] -     java.io.tmpdir = /var/folders/dz/m2m_rjds3ng1ljnj2r5x24yh0000gn/T/
+[FORK] -     java.runtime.name = OpenJDK Runtime Environment
+[FORK] -     java.runtime.version = 17.0.5+8-LTS
+[FORK] -     java.specification.name = Java Platform API Specification
+[FORK] -     java.specification.vendor = Oracle Corporation
+[FORK] -     java.specification.version = 17
+[FORK] -     java.vendor = BellSoft
+[FORK] -     java.vendor.url = https://bell-sw.com/
+[FORK] -     java.vendor.url.bug = https://bell-sw.com/support
+[FORK] -     java.version = 17.0.5
+[FORK] -     java.version.date = 2022-10-18
+[FORK] -     java.vm.compressedOopsMode = Zero based
+[FORK] -     java.vm.info = mixed mode, sharing
+[FORK] -     java.vm.name = OpenJDK 64-Bit Server VM
+[FORK] -     java.vm.specification.name = Java Virtual Machine Specification
+[FORK] -     java.vm.specification.vendor = Oracle Corporation
+[FORK] -     java.vm.specification.version = 17
+[FORK] -     java.vm.vendor = BellSoft
+[FORK] -     java.vm.version = 17.0.5+8-LTS
+[FORK] -     jdk.debug = release
+[FORK] -     line.separator = 
+[FORK] - 
+[FORK] -     native.encoding = UTF-8
+[FORK] -     os.version = 13.4
+[FORK] -     path.separator = :
+[FORK] -     spring.data.gemfire.cache.server.port = 56415
+[FORK] -     spring.data.gemfire.pool.servers = localhost[56415]
+[FORK] -     sun.arch.data.model = 64
+[FORK] -     sun.boot.library.path = /Library/Java/JavaVirtualMachines/liberica-jdk-17.jdk/Contents/Home/lib
+[FORK] -     sun.cpu.endian = little
+[FORK] -     sun.io.unicode.encoding = UnicodeBig
+[FORK] -     sun.java.command = example.app.security.server.BootGeodeSecurityServerApplication
+[FORK] -     sun.java.launcher = SUN_STANDARD
+[FORK] -     sun.jnu.encoding = UTF-8
+[FORK] -     sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+[FORK] -     sun.nio.ch.bugLevel = 
+[FORK] -     user.country = US
+[FORK] -     user.language = en
+[FORK] -     user.timezone = America/Los_Angeles
+[FORK] - Log4J 2 Configuration:
+[FORK] -     org.apache.geode.logging.internal.SimpleLoggingProvider
+[FORK] - ---------------------------------------------------------------------------
+[FORK] - 
+[FORK] - 2023-05-19 14:45:32,858  INFO he.geode.logging.internal.LoggingSession: 116 - Startup Configuration: 
+[FORK] - ### GemFire Properties defined with api ###
+[FORK] - disable-auto-reconnect=true
+[FORK] - log-level=config
+[FORK] - mcast-port=0
+[FORK] - name=SpringBasedCacheServerApplication
+[FORK] - security-client-auth-init=********
+[FORK] - security-peer-auth-init=********
+[FORK] - ssl-ciphers=any
+[FORK] - ssl-enabled-components=all
+[FORK] - ssl-endpoint-identification-enabled=false
+[FORK] - ssl-keystore=/Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-samples/boot/security/build/resources/main/trusted.keystore
+[FORK] - ssl-keystore-password=********
+[FORK] - ssl-keystore-type=JKS
+[FORK] - ssl-protocols=any
+[FORK] - ssl-require-authentication=true
+[FORK] - ssl-truststore=/Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-samples/boot/security/build/resources/main/trusted.keystore
+[FORK] - ssl-truststore-type=JKS
+[FORK] - ssl-use-default-context=false
+[FORK] - ssl-web-require-authentication=false
+[FORK] - use-cluster-configuration=false
+[FORK] - use-udp-membership-messenger=false
+[FORK] - ### GemFire Properties using default values ###
+[FORK] - ack-severe-alert-threshold=0
+[FORK] - ack-wait-threshold=15
+[FORK] - archive-disk-space-limit=0
+[FORK] - archive-file-size-limit=0
+[FORK] - async-distribution-timeout=0
+[FORK] - async-max-queue-size=8
+[FORK] - async-queue-timeout=60000
+[FORK] - bind-address=
+[FORK] - cache-xml-file=cache.xml
+[FORK] - cluster-configuration-dir=
+[FORK] - cluster-ssl-ciphers=any
+[FORK] - cluster-ssl-enabled=false
+[FORK] - cluster-ssl-keystore=
+[FORK] - cluster-ssl-keystore-password=
+[FORK] - cluster-ssl-keystore-type=
+[FORK] - cluster-ssl-protocols=any
+[FORK] - cluster-ssl-require-authentication=true
+[FORK] - cluster-ssl-truststore=
+[FORK] - cluster-ssl-truststore-password=
+[FORK] - conflate-events=server
+[FORK] - conserve-sockets=false
+[FORK] - delta-propagation=true
+[FORK] - deploy-working-dir=/Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-samples/boot/security/BootGeodeSecurityServerApplication-2023-05-19-02-45-27
+[FORK] - disable-jmx=false
+[FORK] - disable-tcp=false
+[FORK] - distributed-system-id=-1
+[FORK] - distributed-transactions=false
+[FORK] - durable-client-id=
+[FORK] - durable-client-timeout=300
+[FORK] - enable-cluster-configuration=true
+[FORK] - enable-management-rest-service=true
+[FORK] - enable-network-partition-detection=true
+[FORK] - enable-time-statistics=true
+[FORK] - enforce-unique-host=false
+[FORK] - gateway-ssl-ciphers=any
+[FORK] - gateway-ssl-enabled=false
+[FORK] - gateway-ssl-keystore=
+[FORK] - gateway-ssl-keystore-password=
+[FORK] - gateway-ssl-keystore-type=
+[FORK] - gateway-ssl-protocols=any
+[FORK] - gateway-ssl-require-authentication=true
+[FORK] - gateway-ssl-truststore=
+[FORK] - gateway-ssl-truststore-password=
+[FORK] - groups=
+[FORK] - http-service-bind-address=
+[FORK] - http-service-port=7070
+[FORK] - http-service-ssl-ciphers=any
+[FORK] - http-service-ssl-enabled=false
+[FORK] - http-service-ssl-keystore=
+[FORK] - http-service-ssl-keystore-password=
+[FORK] - http-service-ssl-keystore-type=
+[FORK] - http-service-ssl-protocols=any
+[FORK] - http-service-ssl-require-authentication=false
+[FORK] - http-service-ssl-truststore=
+[FORK] - http-service-ssl-truststore-password=
+[FORK] - jmx-manager=false
+[FORK] - jmx-manager-access-file=
+[FORK] - jmx-manager-bind-address=
+[FORK] - jmx-manager-hostname-for-clients=
+[FORK] - jmx-manager-http-port=7070
+[FORK] - jmx-manager-password-file=
+[FORK] - jmx-manager-port=1099
+[FORK] - jmx-manager-ssl-ciphers=any
+[FORK] - jmx-manager-ssl-enabled=false
+[FORK] - jmx-manager-ssl-keystore=
+[FORK] - jmx-manager-ssl-keystore-password=
+[FORK] - jmx-manager-ssl-keystore-type=
+[FORK] - jmx-manager-ssl-protocols=any
+[FORK] - jmx-manager-ssl-require-authentication=true
+[FORK] - jmx-manager-ssl-truststore=
+[FORK] - jmx-manager-ssl-truststore-password=
+[FORK] - jmx-manager-start=false
+[FORK] - jmx-manager-update-rate=2000
+[FORK] - load-cluster-configuration-from-dir=false
+[FORK] - locator-wait-time=0
+[FORK] - locators=
+[FORK] - lock-memory=false
+[FORK] - log-disk-space-limit=0
+[FORK] - log-file=
+[FORK] - log-file-size-limit=0
+[FORK] - max-num-reconnect-tries=3
+[FORK] - max-wait-time-reconnect=60000
+[FORK] - mcast-address=239.192.81.1
+[FORK] - mcast-flow-control=1048576, 0.25, 5000
+[FORK] - mcast-recv-buffer-size=1048576
+[FORK] - mcast-send-buffer-size=65535
+[FORK] - mcast-ttl=32
+[FORK] - member-timeout=5000
+[FORK] - membership-port-range=41000-61000
+[FORK] - memcached-bind-address=
+[FORK] - memcached-port=0
+[FORK] - memcached-protocol=ASCII
+[FORK] - off-heap-memory-size=
+[FORK] - redundancy-zone=
+[FORK] - remote-locators=
+[FORK] - remove-unresponsive-client=false
+[FORK] - roles=
+[FORK] - security-auth-token-enabled-components=
+[FORK] - security-client-accessor=
+[FORK] - security-client-accessor-pp=
+[FORK] - security-client-authenticator=
+[FORK] - security-client-dhalgo=
+[FORK] - security-log-file=
+[FORK] - security-log-level=config
+[FORK] - security-manager=
+[FORK] - security-peer-authenticator=
+[FORK] - security-peer-verifymember-timeout=1000
+[FORK] - security-post-processor=
+[FORK] - security-udp-dhalgo=
+[FORK] - serializable-object-filter=!*
+[FORK] - server-bind-address=
+[FORK] - server-ssl-ciphers=any
+[FORK] - server-ssl-enabled=false
+[FORK] - server-ssl-keystore=
+[FORK] - server-ssl-keystore-password=
+[FORK] - server-ssl-keystore-type=
+[FORK] - server-ssl-protocols=any
+[FORK] - server-ssl-require-authentication=true
+[FORK] - server-ssl-truststore=
+[FORK] - server-ssl-truststore-password=
+[FORK] - socket-buffer-size=32768
+[FORK] - socket-lease-time=1800000
+[FORK] - ssl-client-protocols=
+[FORK] - ssl-cluster-alias=
+[FORK] - ssl-default-alias=
+[FORK] - ssl-gateway-alias=
+[FORK] - ssl-jmx-alias=
+[FORK] - ssl-locator-alias=
+[FORK] - ssl-parameter-extension=
+[FORK] - ssl-server-alias=
+[FORK] - ssl-server-protocols=
+[FORK] - ssl-truststore-password=
+[FORK] - ssl-web-alias=
+[FORK] - start-dev-rest-api=false
+[FORK] - start-locator=
+[FORK] - statistic-archive-file=
+[FORK] - statistic-sample-rate=1000
+[FORK] - statistic-sampling-enabled=true
+[FORK] - tcp-port=0
+[FORK] - thread-monitor-enabled=true
+[FORK] - thread-monitor-interval-ms=60000
+[FORK] - thread-monitor-time-limit-ms=120000
+[FORK] - udp-fragment-size=60000
+[FORK] - udp-recv-buffer-size=1048576
+[FORK] - udp-send-buffer-size=65535
+[FORK] - user-command-packages=
+[FORK] - validate-serializable-objects=false
+[FORK] - 
+[FORK] - 2023-05-19 14:45:32,860  INFO he.geode.logging.internal.LoggingSession: 120 - ClassLoader Modules:
+[FORK] - No modules found
+[FORK] - 2023-05-19 14:45:32,872  INFO he.geode.internal.InternalDataSerializer: 490 - initializing InternalDataSerializer with 7 services
+[FORK] - 2023-05-19 14:45:32,875  INFO alization.filter.SanctionedSerializables:  88 - loaded 1 sanctioned serializables from CQSanctionedSerializablesService
+[FORK] - 2023-05-19 14:45:32,875  INFO alization.filter.SanctionedSerializables:  88 - loaded 6 sanctioned serializables from SerializationSanctionedSerializablesService
+[FORK] - 2023-05-19 14:45:32,898  INFO alization.filter.SanctionedSerializables:  88 - loaded 488 sanctioned serializables from CoreSanctionedSerializablesService
+[FORK] - 2023-05-19 14:45:32,902  INFO alization.filter.SanctionedSerializables:  88 - loaded 116 sanctioned serializables from GfshSanctionedSerializablesService
+[FORK] - 2023-05-19 14:45:32,903  INFO alization.filter.SanctionedSerializables:  88 - loaded 0 sanctioned serializables from MembershipSanctionedSerializablesService
+[FORK] - 2023-05-19 14:45:32,905  INFO alization.filter.SanctionedSerializables:  88 - loaded 6 sanctioned serializables from WANSanctionedSerializablesService
+[FORK] - 2023-05-19 14:45:32,906  INFO alization.filter.SanctionedSerializables:  88 - loaded 42 sanctioned serializables from ManagementSanctionedSerializablesService
+[FORK] - 2023-05-19 14:45:33,133  INFO                         org.apache.geode:   ? - [ThreadsMonitor] New Monitor object and process were created.
+[FORK] - 
+[FORK] - 2023-05-19 14:45:33,167  INFO e.internal.statistics.StatArchiveHandler: 316 - Disabling statistic archival.
+[FORK] - 2023-05-19 14:45:33,380  INFO he.geode.internal.cache.GemFireCacheImpl:1007 - Running in local mode since no locators were specified.
+[FORK] - 2023-05-19 14:45:33,466  INFO he.geode.internal.cache.GemFireCacheImpl:1527 - Initialized cache service org.apache.geode.cache.wan.internal.WanCopyRegionFunctionService
+[FORK] - 2023-05-19 14:45:34,344  INFO he.geode.internal.cache.GemFireCacheImpl:1527 - Initialized cache service org.apache.geode.management.internal.cli.remote.OnlineCommandProcessor
+[FORK] - 2023-05-19 14:45:34,353  INFO he.geode.internal.cache.GemFireCacheImpl:1527 - Initialized cache service org.apache.geode.cache.query.internal.QueryConfigurationServiceImpl
+[FORK] - 2023-05-19 14:45:34,425  INFO e.geode.internal.cache.DistributedRegion:1158 - Initializing region _monitoringRegion_192.168.1.210<v-1>0
+[FORK] - 2023-05-19 14:45:34,430  INFO e.geode.internal.cache.DistributedRegion:1660 - Initialization of region _monitoringRegion_192.168.1.210<v-1>0 completed
+[FORK] - 2023-05-19 14:45:34,509  INFO gframework.data.gemfire.CacheFactoryBean: 270 - Created new VMware GemFire version [10.0.0] Cache [SpringBasedCacheServerApplication]
+[FORK] - 2023-05-19 14:45:34,510  INFO gframework.data.gemfire.CacheFactoryBean: 270 - Connected to Distributed System [SpringBasedCacheServerApplication] as Member [jpatrickP6GQC(SpringBasedCacheServerApplication:67503:loner):0:0aa4f935:SpringBasedCacheServerApplication] in Group(s) [[]] with Role(s) [[]] on Host [jpatrickP6GQC] having PID [67503]
+[FORK] - 2023-05-19 14:45:35,159  INFO watch.FileWatchingX509ExtendedKeyManager: 219 - Initialized KeyManager for /Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-samples/boot/security/build/resources/main/trusted.keystore
+[FORK] - 2023-05-19 14:45:35,161  INFO nternal.net.filewatch.PollingFileWatcher:  68 - Started watching /Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-samples/boot/security/build/resources/main/trusted.keystore
+[FORK] - 2023-05-19 14:45:35,165  INFO tch.FileWatchingX509ExtendedTrustManager: 205 - Initialized TrustManager for /Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-samples/boot/security/build/resources/main/trusted.keystore
+[FORK] - 2023-05-19 14:45:35,166  INFO nternal.net.filewatch.PollingFileWatcher:  68 - Started watching /Users/jpatrick/projects/spring-boot-for-vmware-gemfire/spring-gemfire-samples/boot/security/build/resources/main/trusted.keystore
+[FORK] - 2023-05-19 14:45:35,175  INFO                         org.apache.geode:   ? - Updating membership port.  Port changed from 0 to 56415.  ID is now jpatrickP6GQC(SpringBasedCacheServerApplication:67503:loner):0:0aa4f935:SpringBasedCacheServerApplication
+[FORK] - 2023-05-19 14:45:35,175  INFO internal.cache.tier.sockets.AcceptorImpl: 632 - Cache server connection listener bound to address jpatrickP6GQC-0.0.0.0/0.0.0.0:56415 with backlog 1280.
+[FORK] - 2023-05-19 14:45:35,191  INFO l.cache.tier.sockets.ClientHealthMonitor: 729 - ClientHealthMonitorThread maximum allowed time between pings: 60000
+[FORK] - 2023-05-19 14:45:35,192  WARN internal.cache.tier.sockets.AcceptorImpl: 677 - Handshaker max Pool size: 50
+[FORK] - 2023-05-19 14:45:35,208  INFO che.geode.internal.cache.CacheServerImpl: 392 - CacheServer Configuration:  port=56415 max-connections=1200 max-threads=0 notify-by-subscription=true socket-buffer-size=32768 maximum-time-between-pings=60000 maximum-message-count=230000 message-time-to-live=180 eviction-policy=none capacity=1 overflow directory=. groups=[] loadProbe=ConnectionCountProbe loadPollInterval=5000 tcpNoDelay=true
+[FORK] - ?[34mStarted BootGeodeSecurityServerApplication in 6.377 seconds (process running for 7.235)?[0;39m 
+[FORK] - 2023-05-19 14:45:35,627  WARN internal.cache.tier.sockets.AcceptorImpl:1379 - Cache server: failed accepting client connection javax.net.ssl.SSLHandshakeException: Remote host terminated the handshake
+[FORK] - javax.net.ssl.SSLHandshakeException: Remote host terminated the handshake
+[FORK] - 	at java.base/sun.security.ssl.SSLSocketImpl.handleEOF(SSLSocketImpl.java:1714)
+[FORK] - 	at java.base/sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1513)
+[FORK] - 	at java.base/sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1420)
+[FORK] - 	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:455)
+[FORK] - 	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:426)
+[FORK] - 	at org.apache.geode.internal.net.SocketCreator.handshakeIfSocketIsSSL(SocketCreator.java:459)
+[FORK] - 	at org.apache.geode.internal.net.SCClusterSocketCreator.handshakeIfSocketIsSSL(SCClusterSocketCreator.java:45)
+[FORK] - 	at org.apache.geode.internal.cache.tier.sockets.AcceptorImpl.getCommunicationModeForNonSelector(AcceptorImpl.java:1578)
+[FORK] - 	at org.apache.geode.internal.cache.tier.sockets.AcceptorImpl.handleNewClientConnection(AcceptorImpl.java:1448)
+[FORK] - 	at org.apache.geode.internal.cache.tier.sockets.AcceptorImpl.lambda$handOffNewClientConnection$4(AcceptorImpl.java:1360)
+[FORK] - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[FORK] - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[FORK] - 	at java.base/java.lang.Thread.run(Thread.java:833)
+[FORK] - Caused by: java.io.EOFException: SSL peer shut down incorrectly
+[FORK] - 	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:483)
+[FORK] - 	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:472)
+[FORK] - 	at java.base/sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:160)
+[FORK] - 	at java.base/sun.security.ssl.SSLTransport.decode(SSLTransport.java:111)
+[FORK] - 	at java.base/sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1505)
+[FORK] - 	... 11 common frames omitted
+[FORK] - 2023-05-19 14:45:36,453  WARN internal.cache.tier.sockets.AcceptorImpl:1379 - Cache server: failed accepting client connection javax.net.ssl.SSLHandshakeException: Remote host terminated the handshake
+[FORK] - javax.net.ssl.SSLHandshakeException: Remote host terminated the handshake
+[FORK] - 	at java.base/sun.security.ssl.SSLSocketImpl.handleEOF(SSLSocketImpl.java:1714)
+[FORK] - 	at java.base/sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1513)
+[FORK] - 	at java.base/sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1420)
+[FORK] - 	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:455)
+[FORK] - 	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:426)
+[FORK] - 	at org.apache.geode.internal.net.SocketCreator.handshakeIfSocketIsSSL(SocketCreator.java:459)
+[FORK] - 	at org.apache.geode.internal.net.SCClusterSocketCreator.handshakeIfSocketIsSSL(SCClusterSocketCreator.java:45)
+[FORK] - 	at org.apache.geode.internal.cache.tier.sockets.AcceptorImpl.getCommunicationModeForNonSelector(AcceptorImpl.java:1578)
+[FORK] - 	at org.apache.geode.internal.cache.tier.sockets.AcceptorImpl.handleNewClientConnection(AcceptorImpl.java:1448)
+[FORK] - 	at org.apache.geode.internal.cache.tier.sockets.AcceptorImpl.lambda$handOffNewClientConnection$4(AcceptorImpl.java:1360)
+[FORK] - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[FORK] - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[FORK] - 	at java.base/java.lang.Thread.run(Thread.java:833)
+[FORK] - Caused by: java.io.EOFException: SSL peer shut down incorrectly
+[FORK] - 	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:483)
+[FORK] - 	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:472)
+[FORK] - 	at java.base/sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:160)
+[FORK] - 	at java.base/sun.security.ssl.SSLTransport.decode(SSLTransport.java:111)
+[FORK] - 	at java.base/sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1505)
+[FORK] - 	... 11 common frames omitted
+[FORK] - 2023-05-19 14:45:42,205  INFO ion.mgt.AbstractValidatingSessionManager: 233 - Enabling session validation scheduler...
+[FORK] - 2023-05-19 14:45:42,253  INFO internal.cache.tier.sockets.AcceptorImpl:1910 - :Cache server: Initializing primary server-to-client communication socket: SSLSocket[hostname=127.0.0.1, port=56440, Session(1684532741881|TLS_AES_256_GCM_SHA384)]
+[FORK] - 2023-05-19 14:45:42,272  INFO e.geode.internal.cache.DistributedRegion:1158 - Initializing region _gfe_non_durable_client_with_id_jpatrickP6GQC(SpringBasedClientCacheApplication:67502:loner):56438:e7bff935:SpringBasedClientCacheApplication_1_queue
+[FORK] - 2023-05-19 14:45:42,272  INFO e.geode.internal.cache.DistributedRegion:1660 - Initialization of region _gfe_non_durable_client_with_id_jpatrickP6GQC(SpringBasedClientCacheApplication:67502:loner):56438:e7bff935:SpringBasedClientCacheApplication_1_queue completed
+[FORK] - 2023-05-19 14:45:42,282  INFO he.geode.internal.cache.ha.HARegionQueue:3797 - Entry expiry tasks disabled because the queue became primary. Old messageTimeToLive was: 180
+[FORK] - 2023-05-19 14:45:43,767  INFO e.geode.internal.cache.DistributedRegion:1158 - Initializing region __PR
+[FORK] - 2023-05-19 14:45:43,768  INFO e.geode.internal.cache.DistributedRegion:1660 - Initialization of region __PR completed
+[FORK] - 2023-05-19 14:45:43,813  INFO e.geode.internal.cache.PartitionedRegion:1446 - Partitioned Region /Customers is born with prId=1 ident:#Customers
+[FORK] - 2023-05-19 14:45:43,857  INFO fig.admin.functions.CreateRegionFunction:  43 - Created Region [Customers] of type [PARTITION]
+[FORK] - 2023-05-19 14:45:43,870  INFO e.geode.internal.cache.PartitionedRegion:1446 - Partitioned Region /ClusteredSpringSessions is born with prId=2 ident:#ClusteredSpringSessions
+[FORK] - 2023-05-19 14:45:43,875  INFO fig.admin.functions.CreateRegionFunction:  43 - Created Region [ClusteredSpringSessions] of type [PARTITION]
+[FORK] - 2023-05-19 14:45:43,895  INFO nfig.admin.functions.CreateIndexFunction:  43 - Creating Index with name [principalNameIndex] having expression [principalName] on Region [/ClusteredSpringSessions] with type [FUNCTIONAL]
+[FORK] - 2023-05-19 14:45:43,921  INFO e.geode.internal.cache.PartitionedRegion:8344 - Created index locally, sending index creation message to all members, and will be waiting for response Index [ Name=principalNameIndex Type =FUNCTIONAL IdxExp=principalName From=/ClusteredSpringSessions Proj=*]imports : null.
+[FORK] - 2023-05-19 14:45:44,076  INFO e.geode.internal.cache.DistributedRegion:1158 - Initializing region PdxTypes
+[FORK] - 2023-05-19 14:45:44,076  INFO e.geode.internal.cache.DistributedRegion:1660 - Initialization of region PdxTypes completed
+[FORK] - 2023-05-19 14:45:44,083  INFO .geode.pdx.internal.PeerTypeRegistration: 182 - Adding new type: PdxType[dsid=0, typenum=14764549
+[FORK] -         name=example.app.security.client.model.Customer
+[FORK] -         fields=[
+[FORK] -         id:Object:identity:0:idx0(relativeOffset)=0:idx1(vlfOffsetIndex)=-1
+[FORK] -         name:String:1:1:idx0(relativeOffset)=0:idx1(vlfOffsetIndex)=1]]
+[FORK] - 2023-05-19 14:45:44,099  INFO g.apache.geode.pdx.internal.TypeRegistry: 212 - Caching PdxType[dsid=0, typenum=14764549
+[FORK] -         name=example.app.security.client.model.Customer
+[FORK] -         fields=[
+[FORK] -         id:Object:identity:0:idx0(relativeOffset)=0:idx1(vlfOffsetIndex)=-1
+[FORK] -         name:String:1:1:idx0(relativeOffset)=0:idx1(vlfOffsetIndex)=1]]
+[FORK] - 2023-05-19 14:45:44,112  INFO e.geode.internal.cache.DistributedRegion:1158 - Initializing region _B__Customers_2
+[FORK] - 2023-05-19 14:45:44,112  INFO e.geode.internal.cache.DistributedRegion:1660 - Initialization of region _B__Customers_2 completed
+[FORK] - 2023-05-19 14:45:44,127  INFO                org.apache.geode.security: 295 - NotAuthorizedException: jdoe not authorized for DATA:READ:Customers:2
+[FORK] - 2023-05-19 14:45:44,685  INFO                org.apache.geode.security: 295 - NotAuthorizedException: jdoe not authorized for DATA:READ:Customers:2
+[FORK] - 2023-05-19 14:45:44,734  INFO e.geode.internal.cache.DistributedRegion:1158 - Initializing region _B__Customers_3
+[FORK] - 2023-05-19 14:45:44,734  INFO e.geode.internal.cache.DistributedRegion:1660 - Initialization of region _B__Customers_3 completed
+]]></system-err>
+</testsuite>

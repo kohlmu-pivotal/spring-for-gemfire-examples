@@ -1,0 +1,17 @@
+plugins {
+	id "java"
+}
+
+description = "Spring Geode Sample demonstrating Spring's Cache Abstraction using Apache Geode as the caching provider for Look-Aside Caching."
+
+dependencies {
+
+	implementation project(":spring-gemfire-starter")
+
+	implementation "org.springframework.boot:spring-boot-starter-web"
+
+	testImplementation project(":spring-gemfire-starter-test")
+
+	testImplementation "org.springframework.boot:spring-boot-starter-test"
+
+}
