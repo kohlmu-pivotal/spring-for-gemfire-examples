@@ -16,6 +16,7 @@
 
 package dev.gemfire.spring.session.client;
 
+import org.apache.geode.cache.client.ClientRegionShortcut;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -26,9 +27,9 @@ import org.springframework.data.gemfire.support.ConnectionEndpoint;
 import org.springframework.session.data.gemfire.config.annotation.web.http.EnableGemFireHttpSession;
 
 @SpringBootApplication
-@ClientCacheApplication(name = "SpringSessionDataGeodeJavaConfigSampleClient",
+@ClientCacheApplication(name = "SimpleSpringSessionGemFireSampleClient",
         readTimeout = 15000, retryAttempts = 1, subscriptionEnabled = true)
-@EnableGemFireHttpSession(poolName = "DEFAULT")
+@EnableGemFireHttpSession(poolName = "DEFAULT",clientRegionShortcut = ClientRegionShortcut.CACHING_PROXY)
 public class ClientConfig {
 
     public static void main(String[] args) {
