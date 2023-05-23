@@ -1,0 +1,3 @@
+start locator --name=sessionLocator --port=10334
+start server --name=sessionServer --server-port=40404
+create region --name=ClusteredSpringSessions --type=PARTITION_REDUNDANT_HEAP_LRU --entry-idle-time-expiration=10 --entry-idle-time-expiration-action=DESTROY --enable-statistics
