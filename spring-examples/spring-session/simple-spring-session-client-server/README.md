@@ -7,6 +7,7 @@ This example is a simple Spring Session example, where there is a GemFire client
 In order to run the following example one requires the following to be set up:
 * Java 17
 * Latest VMware GemFire is installed locally
+* Set up local `gradle` or `maven` environment by following Steps 1-6 and 8 from [Spring Boot For VMware GemFire Quickstart](https://docs.vmware.com/en/Spring-Boot-for-VMware-GemFire/index.html#spring-boot-for-vmware-gemfire-quick-start-0)
 
 ## Steps to run
 1. Clone `Simple Spring Session Client Server` project
