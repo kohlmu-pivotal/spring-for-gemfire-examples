@@ -1,0 +1,56 @@
+plugins {
+    id("org.springframework.boot") version "3.0.7"
+    id("io.spring.dependency-management") version "1.1.0"
+    id "java"
+    id "application"
+}
+
+project.ext.seleniumDependencies = [
+        "org.seleniumhq.selenium:htmlunit-driver",
+        "org.seleniumhq.selenium:selenium-support"
+]
+
+dependencies {
+
+    implementation "com.vmware.gemfire:spring-boot-session-3.0-gemfire-10.0:1.0.0"
+    implementation "com.vmware.gemfire:spring-boot-logging-3.0-gemfire-10.0:1.0.0"
+    implementation "com.vmware.gemfire:gemfire-core:10.0.0"
+    implementation "com.vmware.gemfire:gemfire-cq:10.0.0"
+
+    implementation("org.springframework.boot:spring-boot-starter-freemarker") {
+        exclude group: "org.apache.logging.log4j", module: "log4j-to-slf4j"
+    }
+
+    implementation("org.springframework.boot:spring-boot-starter-web") {
+        exclude group: "org.apache.logging.log4j", module: "log4j-to-slf4j"
+    }
+
+    implementation "jakarta.servlet:jakarta.servlet-api"
+//    implementation "org.springframework.data:spring-data-geode-test"
+
+    runtimeOnly "org.springframework.shell:spring-shell"
+
+    testImplementation("org.springframework.boot:spring-boot-starter-test") {
+        exclude group: "org.apache.logging.log4j", module: "log4j-to-slf4j"
+    }
+
+    testImplementation seleniumDependencies
+
+}
+
+mainClassName = 'sample.client.Application'
+
+bootJar {
+    mainClassName = 'sample.client.Application'
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        credentials {
+            username "$gemfireRepoUsername"
+            password "$gemfireRepoPassword"
+        }
+        url = uri("https://commercial-repo.pivotal.io/data3/gemfire-release-repo/gemfire")
+    }
+}
