@@ -26,7 +26,6 @@ dependencies {
     }
 
     implementation "jakarta.servlet:jakarta.servlet-api"
-//    implementation "org.springframework.data:spring-data-geode-test"
 
     runtimeOnly "org.springframework.shell:spring-shell"
 

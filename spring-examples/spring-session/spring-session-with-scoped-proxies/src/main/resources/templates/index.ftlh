@@ -3,7 +3,7 @@
 	<title>Request and Session Counts</title>
 	<style type="text/css">
 		body {
-			padding: 1em;
+			padding: 10px 50px 20px;
 		}
 	</style>
 </head>
@@ -15,7 +15,7 @@
 			in the context of Spring Session when GemFire is used to back the HTTP Session.
 		</p>
 
-		<table>
+		<table border="1" cellspacing="0" cellpadding="1">
 			<thead>
 			<tr>
 				<th> * </th>
