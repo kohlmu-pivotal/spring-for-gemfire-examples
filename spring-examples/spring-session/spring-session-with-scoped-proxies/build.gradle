@@ -37,10 +37,10 @@ dependencies {
 
 }
 
-mainClassName = 'sample.client.Application'
+mainClassName = 'dev.gemfire.spring.session.beanscopes.Application'
 
 bootJar {
-    mainClassName = 'sample.client.Application'
+    mainClassName = 'dev.gemfire.spring.session.beanscopes.Application'
 }
 
 repositories {

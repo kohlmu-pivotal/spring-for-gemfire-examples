@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package sample.client;
+package dev.gemfire.spring.session.beanscopes;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.gemfire.config.annotation.ClientCacheApplication;
 import org.springframework.session.data.gemfire.config.annotation.web.http.EnableGemFireHttpSession;
-import sample.client.config.SessionCountConfiguration;
+import dev.gemfire.spring.session.beanscopes.config.SessionCountConfiguration;
 
 /**
  * A Spring Boot, Pivotal GemFire cache client, web application that reveals the current state of the HTTP Session.

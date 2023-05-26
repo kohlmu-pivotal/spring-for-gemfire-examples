@@ -1,4 +1,4 @@
-package sample.client.controller;
+package dev.gemfire.spring.session.beanscopes.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -8,14 +8,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import sample.client.model.RequestScopedProxyBean;
-import sample.client.model.SessionScopedProxyBean;
+import dev.gemfire.spring.session.beanscopes.beans.RequestScopedProxyBean;
+import dev.gemfire.spring.session.beanscopes.beans.SessionScopedProxyBean;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
-import static sample.client.Application.INDEX_TEMPLATE_VIEW_NAME;
-import static sample.client.Application.PING_RESPONSE;
+import static dev.gemfire.spring.session.beanscopes.Application.INDEX_TEMPLATE_VIEW_NAME;
+import static dev.gemfire.spring.session.beanscopes.Application.PING_RESPONSE;
 
 @Controller
 public class SessionCountController {

@@ -1,5 +1,5 @@
 
-package sample.client.model;
+package dev.gemfire.spring.session.beanscopes.beans;
 
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
