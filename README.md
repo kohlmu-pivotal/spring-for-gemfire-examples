@@ -6,7 +6,7 @@ SPDX-License-Identifier: Apache-2.0
 # VMware GemFire Examples
 
 This repo contains examples of apps that demonstrate the use of VMware GemFire and can be used with the 
-[Tanzu Developer Center](https://tanzu.vmware.com/developer/data/gemfire/).
+[GemFire Developer Center](https://gemfire.dev/).
 Each example app resides in its own directory within this repository:
 
 - Hello, World! in `hello-world`
