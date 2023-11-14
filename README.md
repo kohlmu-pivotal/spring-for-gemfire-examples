@@ -13,4 +13,7 @@ Each example app resides in its own directory within this repository:
 - Example of implementing an HTTP session state cache in `session-state`
 - Example of converting a Redis Publish/Subscribe app to Tanzu GemFire in `convert-redis-to-gemfire/pub-sub`
 - Examples of converting Spring Session Redis apps to Tanzu GemFire in `convert-redis-to-gemfire/session-state`
+- Examples of using Spring Session for GemFire
+- Examples of using Spring Data for GemFire
+- Examples of using Spring Boot for GemFire
 
