@@ -1,4 +1,4 @@
-rootProject.name = 'inline-cache'
+rootProject.name = "inline-caching"
 
-include 'web'
-include 'cache-loader'
+include("web")
+include("cache-loader")

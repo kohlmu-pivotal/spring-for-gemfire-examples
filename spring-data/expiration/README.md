@@ -18,9 +18,10 @@ In order to run the following example one requires the following to be set up:
 
 ## Steps to run
 1. Clone `Spring For GemFire Examples` project
+2. `cd` into the cloned project directory
 2. Start GemFire server-side processes
    1. Open new Terminal
-   2. `cd` into the `expiration` project directory, `spring-examples/spring-data/expiration`
+   2. `cd` into the `expiration` project directory, `spring-data/expiration`
    3. Start `gfsh` located in the `{VMware_GemFire_installation_location}/bin` directory
    4. Launch the Locator and Server by running `start.gfsh` file located in the `expiration` project directory in `gfsh`. <br> e.g `run --file={pathToStartGfshFile}/start.gfsh`
    5. Confirm that the locator and server are running by running `list members` in `gfsh`, which should contain two entries.

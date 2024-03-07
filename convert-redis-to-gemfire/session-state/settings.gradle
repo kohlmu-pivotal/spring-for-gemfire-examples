@@ -1,0 +1,5 @@
+includeBuild("spring-session-boot")
+includeBuild("spring-session-boot-json")
+includeBuild("spring-session-boot-simple")
+
+rootProject.name="convert-session-state"

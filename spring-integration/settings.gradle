@@ -1,0 +1,1 @@
+include("gemfire-rabbit-postgres-integration")

@@ -27,8 +27,10 @@ Replace them with these dependencies:
 ```groovy
 
 dependencies {
-    implementation 'com.vmware.gemfire:spring-boot-3.1-vmware-gemfire-10.0:1.0.0'
-    implementation 'com.vmware.gemfire:spring-boot-session-3.1-vmware-gemfire-10.0:1.0.0'
+    implementation 'com.vmware.gemfire:spring-boot-3.1-vmware-gemfire-10.1:1.0.0'
+    implementation 'com.vmware.gemfire:spring-boot-session-3.1-vmware-gemfire-10.1:1.0.0'
+    implementation 'com.vmware.gemfire:gemfire-core:10.1.0'
+    implementation 'com.vmware.gemfire:gemfire-cq:10.1.0'
      ...
 }
 ```

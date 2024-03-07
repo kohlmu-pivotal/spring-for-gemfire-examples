@@ -1,0 +1,46 @@
+plugins {
+    id "java-library"
+    id "org.springframework.boot" version "3.1.9"
+    id "io.spring.dependency-management" version "1.1.4"
+}
+
+java {
+    toolchain { languageVersion.set(JavaLanguageVersion.of(17)) }
+}
+
+repositories {
+    mavenCentral()
+    repositories {
+        mavenCentral()
+        maven {
+            credentials {
+                username "$gemfireRepoUsername"
+                password "$gemfireRepoPassword"
+            }
+            url = uri("https://commercial-repo.pivotal.io/data3/gemfire-release-repo/gemfire")
+        }
+    }
+}
+
+dependencies {
+    compileOnly("com.vmware.gemfire:gemfire-core:10.1.0")
+    compileOnly("com.vmware.gemfire:spring-boot-3.1-gemfire-10.1:1.0.0")
+
+    testImplementation("com.vmware.gemfire:spring-boot-3.1-gemfire-10.1:1.0.0")
+    testImplementation("com.vmware.gemfire:gemfire-core:10.1.0")
+    testImplementation("com.vmware.gemfire:gemfire-testcontainers:2.0.0")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("junit:junit:4.13.2")
+    testImplementation("org.assertj:assertj-core:3.25.3")
+    testImplementation(platform("org.junit:junit-bom:5.10.0"))
+    testImplementation("org.junit.jupiter:junit-jupiter")
+}
+
+test {
+    setForkEvery(1)
+    maxParallelForks = 3
+    dependsOn("jar")
+    useJUnitPlatform()
+
+    systemProperty("test.jar.file", tasks.getByPath("jar").outputs.files.singleFile.absolutePath)
+}

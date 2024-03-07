@@ -1,0 +1,64 @@
+plugins {
+    id "org.gretty" version "4.0.3"
+    id "org.springframework.boot" version "3.1.9"
+    id "io.spring.dependency-management" version "1.1.4"
+    id "java"
+    id "war"
+    id "application"
+}
+
+java {
+    toolchain { languageVersion.set(JavaLanguageVersion.of(17)) }
+}
+
+ext.jstlDependencies = [
+        "jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.0",
+        "org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.1"
+]
+
+ext.slf4jDependencies = [
+        "org.slf4j:slf4j-api:2.0.7",
+        "org.slf4j:jcl-over-slf4j:2.0.7",
+        "org.slf4j:jul-to-slf4j:2.0.7",
+        "org.slf4j:log4j-over-slf4j:2.0.7",
+        "ch.qos.logback:logback-classic:1.4.7"
+]
+
+dependencies {
+    implementation "com.vmware.gemfire:spring-boot-session-3.1-gemfire-10.1:1.0.0"
+    implementation "com.vmware.gemfire:spring-boot-logging-3.1-gemfire-10.0:1.0.0"
+    implementation "com.vmware.gemfire:gemfire-core:10.1.0"
+    implementation "com.vmware.gemfire:gemfire-cq:10.1.0"
+    implementation "org.springframework:spring-web"
+    implementation jstlDependencies
+    implementation slf4jDependencies
+
+    runtimeOnly "jakarta.servlet:jakarta.servlet-api:6.0.0"
+}
+
+mainClassName = "dev.gemfire.spring.session.client.ClientConfig"
+
+repositories {
+    mavenCentral()
+    maven {
+        credentials {
+            username "$gemfireRepoUsername"
+            password "$gemfireRepoPassword"
+        }
+        url = uri("https://commercial-repo.pivotal.io/data3/gemfire-release-repo/gemfire")
+    }
+}
+
+def resolvedLogbackConfigFile = new File(project.extensions.getByType(SourceSetContainer).findByName("main")?.resources?.filter {
+    "logback.xml".equals(it.name)
+}?.singleFile?.absolutePath)
+
+project.gretty {
+    servletContainer = "tomcat10"
+    contextPath = "/"
+    consoleLogEnabled = false
+    fileLogEnabled = false
+    loggingLevel = "OFF"
+
+    logbackConfigFile = resolvedLogbackConfigFile
+}

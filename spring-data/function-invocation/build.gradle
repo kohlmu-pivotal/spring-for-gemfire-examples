@@ -1,10 +1,15 @@
 plugins {
-    id 'java-library'
-    id 'org.springframework.boot' version '3.1.0'
+    id "java-library"
+    id "org.springframework.boot" version "3.1.9"
+    id "io.spring.dependency-management" version "1.1.4"
 }
 
 bootRun {
     mainClass = "dev.gemfire.function.FunctionInvocationClient"
+}
+
+java {
+    toolchain { languageVersion.set(JavaLanguageVersion.of(17)) }
 }
 
 repositories {
@@ -19,8 +24,8 @@ repositories {
 }
 
 dependencies {
-    implementation "com.vmware.gemfire:spring-boot-3.1-gemfire-10.0:1.0.0"
-    implementation "com.vmware.gemfire:gemfire-core:10.0.0"
+    implementation "com.vmware.gemfire:spring-boot-3.1-gemfire-10.1:1.0.0"
+    implementation "com.vmware.gemfire:gemfire-core:10.1.0"
 }
 
 jar {

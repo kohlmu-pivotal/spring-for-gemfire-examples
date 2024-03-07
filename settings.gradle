@@ -1,0 +1,12 @@
+includeBuild("spring-data")
+includeBuild("spring-session")
+includeBuild("spring-boot")
+includeBuild("spring-integration")
+
+includeBuild("hello-world")
+includeBuild("inline-caching")
+includeBuild("session-state")
+
+includeBuild("convert-redis-to-gemfire")
+
+includeBuild("testcontainers")

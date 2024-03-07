@@ -1,15 +1,17 @@
 plugins {
-    id 'java'
-    id 'org.springframework.boot' version '3.1.3'
-    id 'io.spring.dependency-management' version '1.1.3'
+    id "java"
+    id "org.springframework.boot" version "3.1.9"
+    id "io.spring.dependency-management" version "1.1.4"
 }
 
-group = 'com.vmware.gemfire.inlineCaching'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
+group = "com.vmware.gemfire.inlineCaching"
+version = "0.0.1-SNAPSHOT"
+java {
+    toolchain { languageVersion.set(JavaLanguageVersion.of(17)) }
+}
 
 jar {
-    archiveBaseName = 'gemfire-inlineCaching'
+    archiveBaseName = "gemfire-inlineCaching"
 }
 
 repositories {
@@ -29,8 +31,8 @@ bootRun {
 
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation "com.vmware.gemfire:spring-boot-3.1-gemfire-10.0:1.0.0"
-    implementation 'com.vmware.gemfire:gemfire-core:10.0.0'
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "com.vmware.gemfire:spring-boot-3.1-gemfire-10.1:1.0.0"
+    implementation "com.vmware.gemfire:gemfire-core:10.1.0"
 }
 

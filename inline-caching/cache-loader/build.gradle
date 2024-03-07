@@ -1,15 +1,17 @@
 plugins {
-    id 'java'
+    id "java"
 }
 
-group = 'com.vmware.gemfire.inlineCaching'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
+group = "com.vmware.gemfire.inlineCaching"
+version = "0.0.1-SNAPSHOT"
+java {
+    toolchain { languageVersion.set(JavaLanguageVersion.of(17)) }
+}
 
 
 task copyAllDependencies(type: Copy) {
     from configurations.compileClasspath
-    include 'jooq-*.jar', 'HikariCP-*.jar', 'postgresql-*.jar'
+    include "jooq-*.jar", "HikariCP-*.jar", "postgresql-*.jar"
     into "${buildDir}/libs"
 }
 build.dependsOn(copyAllDependencies)
@@ -26,9 +28,9 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.vmware.gemfire:gemfire-core:10.0.0'
-    implementation group: 'org.jooq', name: 'jooq', version: '3.6.2'
-    implementation 'com.zaxxer:HikariCP:4.0.3'
-    implementation 'org.postgresql:postgresql:42.6.0'
+    implementation "com.vmware.gemfire:gemfire-core:10.1.0"
+    implementation group: "org.jooq", name: "jooq", version: "3.6.2"
+    implementation "com.zaxxer:HikariCP:4.0.3"
+    implementation "org.postgresql:postgresql:42.6.0"
 }
 

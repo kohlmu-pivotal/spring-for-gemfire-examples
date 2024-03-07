@@ -4,14 +4,16 @@
  */
 
 plugins {
-    id 'org.springframework.boot' version '3.1.3'
-    id 'io.spring.dependency-management' version '1.1.3'
-    id 'java'
+    id "org.springframework.boot" version "3.1.9"
+    id "io.spring.dependency-management" version "1.1.4"
+    id "java"
 }
 
-group = 'com.vmware.gemfire.helloworld'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
+group = "com.vmware.gemfire.helloworld"
+version = "0.0.1-SNAPSHOT"
+java {
+    toolchain { languageVersion.set(JavaLanguageVersion.of(17)) }
+}
 
 bootBuildImage{
     imageName = "docker.io/[YOUR DOCKER USERNAME]/hello-world:${project.version}"
@@ -30,17 +32,17 @@ repositories {
 
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation "com.vmware.gemfire:spring-boot-3.1-gemfire-10.0:1.0.0"
-    implementation 'com.vmware.gemfire:gemfire-core:10.0.1'
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "com.vmware.gemfire:spring-boot-3.1-gemfire-10.1:1.0.0"
+    implementation "com.vmware.gemfire:gemfire-core:10.1.0"
 }
 
 dependencyManagement {
     dependencies {
-        dependencySet(group: 'org.apache.logging.log4j', version: '2.19.0') {
-            entry('log4j-api')
-            entry('log4j-core')
-            entry('log4j-to-slf4j')
+        dependencySet(group: "org.apache.logging.log4j", version: "2.19.0") {
+            entry("log4j-api")
+            entry("log4j-core")
+            entry("log4j-to-slf4j")
         }
     }
 }
